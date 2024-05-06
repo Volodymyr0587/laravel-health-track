@@ -1,5 +1,9 @@
 <x-layout>
 
+    <x-slot:heading>
+        Health Track
+    </x-slot:heading>
+
 <div class="p-4 sm:ml-64">
        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
           <div class="grid grid-cols-3 gap-4 mb-4">
