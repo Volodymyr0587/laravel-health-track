@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RegisterUserController;
 
@@ -20,8 +21,13 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [SessionController::class, 'store']);
 });
 
-Route::middleware('auth')->group(function () {
-    //% Log Out
-    Route::post('/logout', [SessionController::class, 'destroy'])->name('auth.logout');
+//% Events
+Route::middleware('auth')->name('events.')->group(function () {
+    Route::get('/events', [EventController::class, 'index'])->name('index');
+    Route::get('/events/create', [EventController::class, 'create'])->name('create');
+    Route::post('/events', [EventController::class, 'store'])->name('store');
+
 });
 
+//% Log Out
+Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth')->name('auth.logout');

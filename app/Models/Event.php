@@ -16,4 +16,16 @@ class Event extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+
+     * The model's default values for attributes.
+
+     * @var array
+
+     */
+
+    // protected $attributes = [
+    //     'price' => '0.00',
+    // ];
 }

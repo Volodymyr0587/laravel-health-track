@@ -26,7 +26,7 @@ class StoreEventRequest extends FormRequest
             'location' => 'required|string|min:2|max:255',
             'event_time' => 'required|date',
             'description' => 'nullable|string|max:1000',
-            'price' => 'required|decimal',
+            'price' => 'nullable|string',
             'attachment' => 'nullable|mimes:png,jpeg,jpg,pdf|max:2048'
         ];
     }
