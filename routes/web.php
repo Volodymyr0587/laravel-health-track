@@ -9,13 +9,19 @@ Route::get('/', function () {
 })->name('home');
 
 
-//% Auth
-Route::get('/register', [RegisterUserController::class, 'create'])->name('auth.register');
-Route::post('/register', [RegisterUserController::class, 'store']);
 
-//% Log In
-Route::get('/login', [SessionController::class, 'create'])->name('auth.login');
-Route::post('/login', [SessionController::class, 'store']);
+Route::middleware('guest')->group(function () {
+    //% Auth
+    Route::get('/register', [RegisterUserController::class, 'create'])->name('auth.register');
+    Route::post('/register', [RegisterUserController::class, 'store']);
 
-//% Log Out
-Route::post('/logout', [SessionController::class, 'destroy'])->name('auth.logout');
+    //% Log In
+    Route::get('/login', [SessionController::class, 'create'])->name('auth.login');
+    Route::post('/login', [SessionController::class, 'store']);
+});
+
+Route::middleware('auth')->group(function () {
+    //% Log Out
+    Route::post('/logout', [SessionController::class, 'destroy'])->name('auth.logout');
+});
+
