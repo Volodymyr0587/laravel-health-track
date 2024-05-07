@@ -56,7 +56,7 @@
                                     <div
                                         class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
 
-                                        <input type="date" name="event_time" id="event_time" autocomplete="event_time"
+                                        <input type="datetime-local" name="event_time" id="event_time" autocomplete="event_time"
                                             class="block flex-1 border-0 bg-transparent py-1.5 pl-1 mx-2 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
                                     </div>
 
