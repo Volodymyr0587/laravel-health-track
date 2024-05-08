@@ -23,7 +23,7 @@
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ \Carbon\Carbon::parse($event->event_time)->format('d-m-Y H:i:s') }}</p>
                     {{-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $event->description ?? 'No description' }}</p> --}}
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $event->price == 0 ? 'Free' : $event->price }}</p>
-                    <a href="#"
+                    <a href="{{ route('events.show', $event) }}"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-200 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                         Read more
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"

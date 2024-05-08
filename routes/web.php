@@ -26,8 +26,10 @@ Route::middleware('auth')->name('events.')->group(function () {
     Route::get('/events', [EventController::class, 'index'])->name('index');
     Route::get('/events/create', [EventController::class, 'create'])->name('create');
     Route::post('/events', [EventController::class, 'store'])->name('store');
-    Route::patch('/events/{event}/edit', [EventController::class, 'edit'])->can('update', 'event')->name('edit');
-    Route::delete('/events/{event}', [EventController::class, 'destroy'])->can('delete', 'event')->name('destroy');
+    Route::get('/events/{event}', [EventController::class, 'show'])->name('show');
+    Route::get('/events/{event}/edit', [EventController::class, 'edit'])->can('edit', 'event')->name('edit');
+    Route::patch('/events/{event}', [EventController::class, 'update'])->can('edit', 'event')->name('update');
+    Route::delete('/events/{event}', [EventController::class, 'destroy'])->can('edit', 'event')->name('destroy');
 });
 
 //% Log Out
