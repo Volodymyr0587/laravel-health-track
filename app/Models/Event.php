@@ -20,6 +20,6 @@ class Event extends Model
     // Define the mutator for the price attribute
     public function setPriceAttribute($value)
     {
-        $this->attributes['price'] = $value ?: '0.00';
+        $this->attributes['price'] = $value ? round($value, 2) : '0.00';
     }
 }
