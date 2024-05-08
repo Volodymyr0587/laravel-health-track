@@ -13,11 +13,11 @@ Route::get('/', function () {
 
 Route::middleware('guest')->group(function () {
     //% Auth
-    Route::get('/register', [RegisterUserController::class, 'create'])->name('auth.register');
+    Route::get('/register', [RegisterUserController::class, 'create'])->name('register');
     Route::post('/register', [RegisterUserController::class, 'store']);
 
     //% Log In
-    Route::get('/login', [SessionController::class, 'create'])->name('auth.login');
+    Route::get('/login', [SessionController::class, 'create'])->name('login');
     Route::post('/login', [SessionController::class, 'store']);
 });
 
@@ -26,8 +26,9 @@ Route::middleware('auth')->name('events.')->group(function () {
     Route::get('/events', [EventController::class, 'index'])->name('index');
     Route::get('/events/create', [EventController::class, 'create'])->name('create');
     Route::post('/events', [EventController::class, 'store'])->name('store');
-
+    Route::patch('/events/{event}/edit', [EventController::class, 'edit'])->can('update', 'event')->name('edit');
+    Route::delete('/events/{event}', [EventController::class, 'destroy'])->can('delete', 'event')->name('destroy');
 });
 
 //% Log Out
-Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth')->name('auth.logout');
+Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');
