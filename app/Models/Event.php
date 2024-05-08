@@ -17,15 +17,9 @@ class Event extends Model
         return $this->belongsTo(User::class);
     }
 
-    /**
-
-     * The model's default values for attributes.
-
-     * @var array
-
-     */
-
-    // protected $attributes = [
-    //     'price' => '0.00',
-    // ];
+    // Define the mutator for the price attribute
+    public function setPriceAttribute($value)
+    {
+        $this->attributes['price'] = $value ?: '0.00';
+    }
 }
