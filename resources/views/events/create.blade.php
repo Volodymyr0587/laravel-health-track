@@ -1,7 +1,7 @@
 <x-layout>
 
     <x-slot:heading>
-        Create Event
+        {{ __("Create Event") }}
     </x-slot:heading>
 
     <div class="p-4 sm:ml-64">
