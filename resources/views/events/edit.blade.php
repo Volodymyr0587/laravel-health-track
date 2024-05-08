@@ -7,7 +7,7 @@
     <div class="p-4 sm:ml-64">
         <div class="p-4">
 
-            <form action="{{ route('events.update', $event) }}" method="POST">
+            <form action="{{ route('events.update', $event) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
                 <div class="space-y-12">

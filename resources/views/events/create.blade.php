@@ -7,7 +7,7 @@
     <div class="p-4 sm:ml-64">
         <div class="p-4">
 
-            <form action="{{ route('events.store') }}" method="POST">
+            <form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">

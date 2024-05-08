@@ -30,7 +30,14 @@ class EventController extends Controller
      */
     public function store(StoreEventRequest $request)
     {
-        $event = new Event($request->validated());
+        $validatedData = $request->validated();
+
+        if ($request->hasFile('attachment')) {
+            $attachmentPath = $request->file('attachment')->store('attachments');
+            $validatedData['attachment'] = $attachmentPath;
+        }
+
+        $event = new Event($validatedData);
 
         auth()->user()->events()->save($event);
 

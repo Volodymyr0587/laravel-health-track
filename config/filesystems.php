@@ -56,6 +56,14 @@ return [
             'throw' => false,
         ],
 
+        'attachments' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/attachments'),
+            'url' => env('APP_URL').'/storage/attachments',
+            'visibility' => 'public',
+            'throw' => false,
+        ]
+
     ],
 
     /*
