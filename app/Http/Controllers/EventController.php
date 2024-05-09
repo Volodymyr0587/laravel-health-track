@@ -87,6 +87,8 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+
+        return to_route('events.index')->with('message', 'Event deleted successfully');
     }
 }

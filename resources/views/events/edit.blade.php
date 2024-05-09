@@ -13,8 +13,7 @@
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <h2 class="text-base font-semibold leading-7 text-gray-900">{{ __("Hint") }}</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600">Here you can create an event (visit to the
-                            doctor, routine examination, tests, etc.)</p>
+                        <p class="mt-1 text-sm leading-6 text-gray-600">Here you can edit an event</p>
 
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                             <div class="sm:col-span-5">
@@ -24,7 +23,8 @@
                                     <div
                                         class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
 
-                                        <input type="text" name="name" id="name" autocomplete="name" value="{{ $event->name }}"
+                                        <input type="text" name="name" id="name" autocomplete="name"
+                                            value="{{ $event->name }}"
                                             class="block flex-1 border-0 bg-transparent py-1.5 pl-1 mx-2 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                             placeholder="A visit to the family doctor">
                                     </div>
@@ -40,7 +40,8 @@
                                     <div
                                         class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
 
-                                        <input type="text" name="location" id="location" autocomplete="location" value="{{ $event->location }}"
+                                        <input type="text" name="location" id="location" autocomplete="location"
+                                            value="{{ $event->location }}"
                                             class="block flex-1 border-0 bg-transparent py-1.5 pl-1 mx-2 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                             placeholder="Volyn Regional Clinical Hospital, ave. Presidenta Hrushevskyi, 21
                                             Lutsk, Volyn region, 43000">
@@ -57,7 +58,8 @@
                                     <div
                                         class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
 
-                                        <input type="datetime-local" name="event_time" id="event_time" autocomplete="event_time" value="{{ $event->event_time }}"
+                                        <input type="datetime-local" name="event_time" id="event_time"
+                                            autocomplete="event_time" value="{{ $event->event_time }}"
                                             class="block flex-1 border-0 bg-transparent py-1.5 pl-1 mx-2 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
                                     </div>
 
@@ -88,7 +90,8 @@
                                     <div
                                         class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
 
-                                        <input type="text" name="price" id="price" autocomplete="price" value="{{ $event->price }}"
+                                        <input type="text" name="price" id="price" autocomplete="price"
+                                            value="{{ $event->price }}"
                                             class="block flex-1 border-0 bg-transparent py-1.5 pl-1 mx-2 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                             placeholder="750.00">
                                     </div>
@@ -98,10 +101,10 @@
                             </div>
 
                             <div class="sm:col-span-5">
-                                <label for="attachment" class="block text-sm font-medium leading-6 text-gray-900">File upload (Referral to a doctor, etc)</label>
+                                <label for="attachment" class="block text-sm font-medium leading-6 text-gray-900">File
+                                    upload (Referral to a doctor, etc)</label>
                                 <div class="mt-2">
-                                    <div
-                                        class="flex rounded-xs shadow-sm sm:max-w-md">
+                                    <div class="flex rounded-xs shadow-sm sm:max-w-md">
                                         <input type="file" name="attachment" id="attachment"
                                             class="block w-full text-sm text-gray-900  rounded-lg cursor-pointer ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                                     </div>
@@ -109,16 +112,42 @@
                                     <x-form-error name="attachment" />
                                 </div>
                             </div>
+
+                            @can('edit', $event)
+                            <div class="sm:col-span-5">
+                                <label for="attachment" class="block text-xl font-bold leading-6 text-red-600">Danger
+                                    Zone</label>
+                                <div class="mt-2">
+                                    <form action="{{ route('events.destroy', $event) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"
+                                            onclick="return confirm('Are you sure you want to delete the record?')"
+                                            class="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Delete
+                                            Event</button>
+                                    </form>
+                                </div>
+                            </div>
+                            @endcan
+
+
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-6 flex items-center justify-end gap-x-6">
-                    <a href="{{ route('events.index') }}" class="text-sm font-semibold leading-6 text-gray-900">Cancel</a>
-                    @can('edit', $event)
-                    <button type="submit"
-                        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update</button>
-                    @endcan
+
+                    <a href="{{ route('events.index') }}"
+                        class="rounded-md bg-gray-600 px-2 py-2 mr-6 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Cancel</a>
+
+                    <div>
+                        @can('edit', $event)
+                        <button type="submit"
+                            class="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Update</button>
+                        @endcan
+                    </div>
+
+
                 </div>
             </form>
 
