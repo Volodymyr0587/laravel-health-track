@@ -32,7 +32,8 @@ class EventController extends Controller
     private function handleFileUpload($request, &$data)
     {
         if ($request->hasFile('attachment')) {
-            $attachmentPath = $request->file('attachment')->store('attachments');
+            $fileName = $request->file('attachment')->getClientOriginalName();
+            $attachmentPath = $request->file('attachment')->storeAs('attachments', $fileName);
             $data['attachment'] = $attachmentPath;
         }
     }
