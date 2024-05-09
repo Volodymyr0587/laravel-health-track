@@ -42,11 +42,16 @@
                     </div>
                 </div>
 
-                <div class="mt-6 flex items-center justify-end gap-x-6">
-                    @can('edit', $event)
-                    <a href="{{ route('events.edit', $event) }}" class="text-sm font-semibold leading-6 text-gray-900">Edit</a>
-                    @endcan
+                <div class="sm:col-span-5">
+                    <div class="mt-4">
+                        <a href="{{ route('events.index') }}"
+                        class="rounded-md bg-gray-600 px-2 py-2 mr-6 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Cancel</a>
+                         @can('edit', $event)
+                        <a href="{{ route('events.edit', $event) }}" class="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Edit</a>
+                        @endcan
+                    </div>
                 </div>
+
         </div>
     </div>
 

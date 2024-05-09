@@ -113,45 +113,35 @@
                                 </div>
                             </div>
 
-                            @can('edit', $event)
                             <div class="sm:col-span-5">
-                                <label for="attachment" class="block text-xl font-bold leading-6 text-red-600">Danger
-                                    Zone</label>
-                                <div class="mt-2">
-                                    <form action="{{ route('events.destroy', $event) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
+                                <div class="mt-6 flex items-center justify-start gap-x-6">
+                                    <a href="{{ route('events.index') }}"
+                                        class="rounded-md bg-gray-600 px-2 py-2 mr-6 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Cancel</a>
+
+                                    <div>
+                                        @can('edit', $event)
                                         <button type="submit"
-                                            onclick="return confirm('Are you sure you want to delete the record?')"
-                                            class="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Delete
-                                            Event</button>
-                                    </form>
+                                            class="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Update</button>
+                                        @endcan
+                                    </div>
                                 </div>
                             </div>
-                            @endcan
-
-
                         </div>
                     </div>
                 </div>
-
-                <div class="mt-6 flex items-center justify-end gap-x-6">
-
-                    <a href="{{ route('events.index') }}"
-                        class="rounded-md bg-gray-600 px-2 py-2 mr-6 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Cancel</a>
-
-                    <div>
-                        @can('edit', $event)
-                        <button type="submit"
-                            class="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Update</button>
-                        @endcan
-                    </div>
-
-
-                </div>
             </form>
 
-
+            <p class="text-xl font-bold text-red-600">Danger zone</p>
+            <div class="mt-2 mb-12">
+                <form action="{{ route('events.destroy', $event) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"
+                        onclick="return confirm('Are you sure you want to delete the record?')"
+                        class="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Delete
+                        Event</button>
+                </form>
+            </div>
         </div>
     </div>
 

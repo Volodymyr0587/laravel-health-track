@@ -6,7 +6,6 @@
 
     <div class="p-4 sm:ml-64">
         <div class="p-4">
-
             <form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="space-y-12">
@@ -56,7 +55,8 @@
                                     <div
                                         class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
 
-                                        <input type="datetime-local" name="event_time" id="event_time" autocomplete="event_time"
+                                        <input type="datetime-local" name="event_time" id="event_time"
+                                            autocomplete="event_time"
                                             class="block flex-1 border-0 bg-transparent py-1.5 pl-1 mx-2 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
                                     </div>
 
@@ -78,8 +78,6 @@
                                 </p>
                             </div>
 
-
-
                             <div class="sm:col-span-5">
                                 <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Price (if
                                     free, leave the field empty)</label>
@@ -97,10 +95,10 @@
                             </div>
 
                             <div class="sm:col-span-5">
-                                <label for="attachment" class="block text-sm font-medium leading-6 text-gray-900">File upload (Referral to a doctor, etc)</label>
+                                <label for="attachment" class="block text-sm font-medium leading-6 text-gray-900">File
+                                    upload (Referral to a doctor, etc)</label>
                                 <div class="mt-2">
-                                    <div
-                                        class="flex rounded-xs shadow-sm sm:max-w-md">
+                                    <div class="flex rounded-xs shadow-sm sm:max-w-md">
                                         <input type="file" name="attachment" id="attachment"
                                             class="block w-full text-sm text-gray-900  rounded-lg cursor-pointer ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                                     </div>
@@ -108,19 +106,21 @@
                                     <x-form-error name="attachment" />
                                 </div>
                             </div>
+
+                            <div class="sm:col-span-5">
+                                <div class="mt-6 flex items-center justify-start gap-x-6">
+                                    <a href="{{ route('events.index') }}"
+                                        class="rounded-md bg-gray-600 px-2 py-2 mr-6 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Cancel</a>
+                                    <div>
+                                        <button type="submit"
+                                            class="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Save</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="mt-6 flex items-center justify-end gap-x-6">
-                    <a href="{{ route('events.index') }}" class="text-sm font-semibold leading-6 text-gray-900">Cancel</a>
-                    <button type="submit"
-                        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
-                </div>
             </form>
-
-
         </div>
     </div>
-
 </x-layout>
