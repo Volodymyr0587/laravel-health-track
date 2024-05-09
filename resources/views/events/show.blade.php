@@ -15,27 +15,39 @@
 
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                             <div class="sm:col-span-5">
+                                <h3 class="mb-2 text-bold text-xl text-green-500">{{ __("Event name") }}</h3>
                                 <p class="block text-sm font-medium leading-6 text-gray-900">{{ $event->name }}</p>
+                                <hr>
                             </div>
 
                             <div class="sm:col-span-5">
+                                <h3 class="mb-2 text-bold text-xl text-green-500">{{ __("Event location") }}</h3>
                                 <p class="block text-sm font-medium leading-6 text-gray-900">{{ $event->location }}</p>
+                                <hr>
                             </div>
 
                             <div class="sm:col-span-5">
+                                <h3 class="mb-2 text-bold text-xl text-green-500">{{ __("Event date and time") }}</h3>
                                 <p class="block text-sm font-medium leading-6 text-gray-900">{{ \Carbon\Carbon::parse($event->event_time)->format('d-m-Y H:i:s') }}</p>
+                                <hr>
                             </div>
 
                             <div class="col-span-full">
+                                <h3 class="mb-2 text-bold text-xl text-green-500">{{ __("Event description") }}</h3>
                                 <p class="block text-sm font-medium leading-6 text-gray-900">{{ $event->description }}</p>
+                                <hr>
                             </div>
 
                             <div class="sm:col-span-5">
+                                <h3 class="mb-2 text-bold text-xl text-green-500">{{ __("Event price") }}</h3>
                                 <p class="block text-sm font-medium leading-6 text-gray-900">{{ $event->price }}</p>
+                                <hr>
                             </div>
 
                             <div class="sm:col-span-5">
+                                <h3 class="mb-2 text-bold text-xl text-green-500">{{ __("Event attachment") }}</h3>
                                 <p class="block text-sm font-medium leading-6 text-gray-900">{{ $event->attachment ?? '' }}</p>
+                                <hr>
                             </div>
                         </div>
                     </div>
