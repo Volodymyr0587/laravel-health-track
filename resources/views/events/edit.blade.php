@@ -13,7 +13,7 @@
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <h2 class="text-base font-semibold leading-7 text-gray-900">{{ __("Hint") }}</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600">Here you can edit an event</p>
+                        <p class="mt-1 text-sm leading-6 text-gray-600">{{ __("Here you can edit an event") }}</p>
 
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                             <div class="sm:col-span-5">
@@ -120,8 +120,7 @@
 
                                     <div>
                                         @can('edit', $event)
-                                        <button type="submit"
-                                            class="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Update</button>
+                                        <x-form-button>Update</x-form-button>
                                         @endcan
                                     </div>
                                 </div>

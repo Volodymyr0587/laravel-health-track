@@ -6,8 +6,9 @@
 
     <div class="p-4 sm:ml-64">
         <div class="p-4">
-            <div class="mb-4">
-                <a href="{{ route('events.create') }}">{{ __('Create Event') }}</a>
+            <div class="mb-6">
+                <a href="{{ route('events.create') }}" class="rounded-lg bg-green-600 px-3 py-4 text-sm font-semibold text-white shadow-sm hover:bg-green-500
+                focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">{{ __('Create Event') }}</a>
             </div>
 
 

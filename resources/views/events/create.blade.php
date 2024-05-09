@@ -112,8 +112,7 @@
                                     <a href="{{ route('events.index') }}"
                                         class="rounded-md bg-gray-600 px-2 py-2 mr-6 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Cancel</a>
                                     <div>
-                                        <button type="submit"
-                                            class="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Save</button>
+                                        <x-form-button>Save</x-form-button>
                                     </div>
                                 </div>
                             </div>
