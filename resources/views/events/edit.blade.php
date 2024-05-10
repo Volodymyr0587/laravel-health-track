@@ -10,7 +10,8 @@
             <h2 class="text-base font-semibold leading-7 text-gray-900">{{ __("Hint") }}</h2>
             <p class="mt-1 text-sm leading-6 text-gray-600">{{ __("Here you can edit an event") }}</p>
 
-            <x-forms.form action="{{ route('events.update', $event) }}" method="PATCH" enctype="multipart/form-data">
+            <x-forms.form action="{{ route('events.update', $event) }}" method="POST" enctype="multipart/form-data">
+                @method('PATCH')
 
                 <x-forms.input label="Event Name" name="name" value="{{ $event->name }}" />
                 <x-forms.input label="Event Location" name="location" value="{{ $event->location }}" />
