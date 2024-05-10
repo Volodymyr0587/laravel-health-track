@@ -13,7 +13,7 @@
             <x-forms.input label="Password" name="password" type="password" />
             <x-forms.input label="Password Confirmation" name="password_confirmation" type="password" />
 
-            <x-forms.button>Create Account</x-forms.button>
+            <x-forms.button type="button">Create Account</x-forms.button>
         </x-forms.form>
 
     </div>

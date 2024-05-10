@@ -27,7 +27,7 @@
                                             placeholder="A visit to the family doctor">
                                     </div>
 
-                                    <x-form-error name="name" />
+                                    <x-forms.error :error="$errors->first('name')" />
                                 </div>
                             </div>
 
@@ -44,7 +44,8 @@
                                             Lutsk, Volyn region, 43000">
                                     </div>
 
-                                    <x-form-error name="location" />
+                                    {{-- <x-form-error name="location" /> --}}
+                                    <x-forms.error :error="$errors->first('location')" />
                                 </div>
                             </div>
 
@@ -60,7 +61,8 @@
                                             class="block flex-1 border-0 bg-transparent py-1.5 pl-1 mx-2 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
                                     </div>
 
-                                    <x-form-error name="event_time" />
+                                    {{-- <x-form-error name="event_time" /> --}}
+                                    <x-forms.error :error="$errors->first('event_time')" />
                                 </div>
                             </div>
 
@@ -71,7 +73,10 @@
                                     <textarea id="description" name="description" rows="3"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
 
-                                    <x-form-error name="description" />
+                                    {{-- <x-form-error name="description" /> --}}
+                                    <x-forms.error :error="$errors->first('description')" />
+
+
                                 </div>
                                 <p class="mt-3 text-sm leading-6 text-gray-600">Describe the event in a few words
                                     (optional)
@@ -90,7 +95,8 @@
                                             placeholder="750.00">
                                     </div>
 
-                                    <x-form-error name="price" />
+                                    {{-- <x-form-error name="price" /> --}}
+                                    <x-forms.error :error="$errors->first('price')" />
                                 </div>
                             </div>
 
@@ -103,7 +109,8 @@
                                             class="block w-full text-sm text-gray-900  rounded-lg cursor-pointer ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                                     </div>
 
-                                    <x-form-error name="attachment" />
+                                    {{-- <x-form-error name="attachment" /> --}}
+                                    <x-forms.error :error="$errors->first('attachment')" />
                                 </div>
                             </div>
 
@@ -112,7 +119,7 @@
                                     <a href="{{ route('events.index') }}"
                                         class="rounded-md bg-gray-600 px-2 py-2 mr-6 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Cancel</a>
                                     <div>
-                                        <x-form-button>Save</x-form-button>
+                                        <x-forms.button>Save</x-forms.button>
                                     </div>
                                 </div>
                             </div>
