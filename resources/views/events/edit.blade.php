@@ -34,10 +34,11 @@
                 <form action="{{ route('events.destroy', $event) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit"
+                    <x-forms.button type="submit" like="button"
                         onclick="return confirm('Are you sure you want to delete the record?')"
-                        class="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Delete
-                        Event</button>
+                        class="bg-red-600 hover:bg-red-500 dark:bg-red-600 dark:hover:bg-red-500">
+                        Delete
+                    </x-forms.button>
                 </form>
             </div>
             @endcan
