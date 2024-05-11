@@ -16,7 +16,7 @@
                 <x-forms.input label="Event Name" name="name" value="{{ $event->name }}" />
                 <x-forms.input label="Event Location" name="location" value="{{ $event->location }}" />
                 <x-forms.input label="Event Date and Time" name="event_time" type="datetime-local" value="{{ $event->event_time }}" />
-                <x-forms.input label="Event Description" name="description" value="{{ $event->description }}" />
+                <x-forms.textarea label="Event Description" name="description" value="{{ $event->description }}" />
                 <x-forms.input label="Event Price (if free, leave the field empty)" name="price" value="{{ $event->price }}" />
                 <x-forms.input label="File upload (Referral to a doctor, etc)" name="attachment" type="file" value="{{ $event->attachment }}" />
 
