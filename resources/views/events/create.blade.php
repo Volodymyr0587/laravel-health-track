@@ -119,7 +119,7 @@
                                     <a href="{{ route('events.index') }}"
                                         class="rounded-md bg-gray-600 px-2 py-2 mr-6 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Cancel</a>
                                     <div>
-                                        <x-forms.button>Save</x-forms.button>
+                                        <x-forms.button like="button">Save</x-forms.button>
                                     </div>
                                 </div>
                             </div>
