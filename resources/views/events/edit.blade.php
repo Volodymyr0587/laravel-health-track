@@ -20,14 +20,17 @@
                 <x-forms.input label="Event Price (if free, leave the field empty)" name="price" value="{{ $event->price }}" />
                 <x-forms.input label="File upload (Referral to a doctor, etc)" name="attachment" type="file" value="{{ $event->attachment }}" />
 
-                @can('edit', $event)
-                <x-forms.button type="submit" like="button">Update</x-forms.button>
-                @endcan
-
+                <div class="flex space-x-2">
+                    <x-forms.button url="{{ route('events.show', $event) }}" like="link">Cancel</x-forms.button>
+                    @can('edit', $event)
+                    <x-forms.button type="submit" like="button">Update</x-forms.button>
+                    @endcan
+                </div>
             </x-forms.form>
 
-            <p class="text-xl font-bold text-red-600">Danger zone</p>
-            <div class="mt-2 mb-12">
+            @can('edit', $event)
+            <div class="mt-8 mb-12 space-y-4">
+                <p class="text-xl font-bold text-red-600">Danger zone</p>
                 <form action="{{ route('events.destroy', $event) }}" method="POST">
                     @csrf
                     @method('DELETE')
@@ -37,6 +40,7 @@
                         Event</button>
                 </form>
             </div>
+            @endcan
         </div>
     </div>
 

@@ -54,13 +54,22 @@
                 </div>
 
                 <div class="sm:col-span-5">
-                    <div class="mt-4">
-                        <a href="{{ route('events.index') }}"
+                    <div class="mt-4 space-x-2">
+                        {{-- <a href="{{ route('events.index') }}"
                         class="rounded-md bg-gray-600 px-2 py-2 mr-6 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Cancel</a>
                          @can('edit', $event)
                         <a href="{{ route('events.edit', $event) }}" class="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Edit</a>
+                        @endcan --}}
+
+                        <x-forms.button url="{{ route('events.index') }}" like="link">Back to Events</x-forms.button>
+                        @can('edit', $event)
+
+                        <x-forms.button url="{{ route('events.edit', $event) }}" like="link">Edit</x-forms.button>
+
                         @endcan
                     </div>
+
+
                 </div>
 
         </div>
