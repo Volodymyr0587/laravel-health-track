@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttachmentsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\SessionController;
@@ -33,6 +34,13 @@ Route::middleware('auth')->name('events.')->group(function () {
         ->can('edit', 'event')->name('downloadAttachment');
     Route::delete('/events/{event}', [EventController::class, 'destroy'])->can('edit', 'event')->name('destroy');
 });
+
+//% Attachments
+Route::middleware('auth')->name('attachments.')->group(function () {
+    Route::get('/user/attachments', [AttachmentsController::class, 'index'])->name('index');
+    Route::delete('/user/attachments/{event}/{media}', [AttachmentsController::class, 'destroy'])->name('destroy');
+});
+
 
 //% Log Out
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');
