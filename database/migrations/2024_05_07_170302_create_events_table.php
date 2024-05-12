@@ -20,7 +20,7 @@ return new class extends Migration
             $table->dateTime('event_time');
             $table->text('description')->nullable();
             $table->decimal('price', 8, 2)->default(0.00);
-            $table->string('attachment')->nullable();
+            // $table->string('attachment')->nullable();
             $table->timestamps();
         });
     }
