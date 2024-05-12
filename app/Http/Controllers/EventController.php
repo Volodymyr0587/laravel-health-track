@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class EventController extends Controller
 {
@@ -48,6 +49,15 @@ class EventController extends Controller
     public function show(Event $event)
     {
         return view('events.show', compact('event'));
+    }
+
+
+    /**
+     * Download attachment file
+     */
+    public function downloadAttachment(Event $event, Media $media)
+    {
+        return response()->download($media->getPath(), $media->file_name);
     }
 
     /**
