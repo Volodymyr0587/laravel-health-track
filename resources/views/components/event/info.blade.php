@@ -9,5 +9,5 @@
         </div>
     </div>
 
-    <hr>
+    <hr class="mt-4">
 </div>
