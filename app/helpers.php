@@ -1,7 +1,7 @@
 <?php
 
-if (! function_exists('count_files')) {
-    function count_files($path) {
-        return count(Illuminate\Support\Facades\Storage::allFiles($path));
+if (! function_exists('count_user_attachment')) {
+    function count_user_attachment() {
+        return auth()->user()?->events()->whereNotNull('attachment')->count() ?? '';
     }
 }
