@@ -19,7 +19,10 @@
                         <x-event.info label-name="Event date and time" event-field="{{ \Carbon\Carbon::parse($event->event_time)->format('d-m-Y H:i:s') }}" />
                         <x-event.info label-name="Event description" event-field="{{ $event->description }}" />
                         <x-event.info label-name="Event price" event-field="{{ $event->price }}" />
-                        <x-event.info label-name="Event attachment" event-field="{{ $event->getFirstMedia('attachments')->name }}" />
+                        @foreach ($event->getMedia('attachments') as $media)
+                        <x-event.info label-name="Event attachment {{ $loop->iteration }}" event-field="{{ $media->file_name }}" />
+                        @endforeach
+
 
                     </div>
                 </div>
