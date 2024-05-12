@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 
@@ -27,27 +26,17 @@ class EventController extends Controller
     }
 
     /**
-     * File upload logic
-     */
-    private function handleFileUpload($request, &$data)
-    {
-        if ($request->hasFile('attachment')) {
-            $fileName = $request->file('attachment')->getClientOriginalName();
-            $attachmentPath = $request->file('attachment')->storeAs('attachments', $fileName);
-            $data['attachment'] = $attachmentPath;
-        }
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreEventRequest $request)
     {
         $validatedData = $request->validated();
 
-        $this->handleFileUpload($request, $validatedData);
+        $event = auth()->user()->events()->create($validatedData);
 
-        auth()->user()->events()->create($validatedData);
+        if ($request->hasFile('attachment')) {
+            $event->addMedia($request->file('attachment'))->toMediaCollection('attachments');
+        }
 
         return to_route('events.index')->with('message', 'Event created successfully');
 
@@ -76,7 +65,9 @@ class EventController extends Controller
     {
         $validatedData = $request->validated();
 
-        $this->handleFileUpload($request, $validatedData);
+        if ($request->hasFile('attachment')) {
+            $event->addMedia($request->file('attachment'))->toMediaCollection('attachments');
+        }
 
         $event->update($validatedData);
 
