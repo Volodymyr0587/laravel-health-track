@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AttachmentsController;
+use App\Http\Controllers\SearchEventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\SessionController;
@@ -9,8 +10,6 @@ use App\Http\Controllers\RegisterUserController;
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
-
 
 Route::middleware('guest')->group(function () {
     //% Auth
@@ -35,12 +34,14 @@ Route::middleware('auth')->name('events.')->group(function () {
     Route::delete('/events/{event}', [EventController::class, 'destroy'])->can('edit', 'event')->name('destroy');
 });
 
+//% Search events
+Route::get('/search', SearchEventController::class)->middleware('auth')->name('search');
+
 //% Attachments
 Route::middleware('auth')->name('attachments.')->group(function () {
     Route::get('/user/attachments', [AttachmentsController::class, 'index'])->name('index');
     Route::delete('/user/attachments/{event}/{media}', [AttachmentsController::class, 'destroy'])->name('destroy');
 });
-
 
 //% Log Out
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');

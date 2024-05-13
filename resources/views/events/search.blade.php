@@ -1,20 +1,13 @@
 <x-layout>
 
     <x-slot:heading>
-        {{ __("Health Events") }}
+        {{ __("Search Results For ") }} "{{ $search }}"
     </x-slot:heading>
 
     <div class="p-4 sm:ml-64">
         <div class="p-4">
             <div class="mb-6">
-                <x-forms.button url="{{ route('events.create') }}" like="link">{{ __('Create Event') }}</x-forms.button>
-
-                <div class="mt-4">
-                    <x-forms.form action="{{ route('search') }}">
-                        <x-forms.input label="Search For Event"  name="search" placeholder="Find a specific event" />
-                        <x-forms.button type="submit" like="button">Searh</x-forms.button>
-                    </x-forms.form>
-                </div>
+                <x-forms.button url="{{ route('events.index') }}" like="link">Back to Events</x-forms.button>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
