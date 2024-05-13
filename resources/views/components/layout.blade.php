@@ -9,9 +9,9 @@
 </head>
 <body>
 
-    <x-show-hide-sidebar-button />
+    <x-sidebar.show-hide-sidebar-button />
 
-    <x-sidebar />
+    <x-sidebar.sidebar />
 
     <header class="bg-white shadow sm:ml-16 md:ml-64 lg:ml-16">
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
