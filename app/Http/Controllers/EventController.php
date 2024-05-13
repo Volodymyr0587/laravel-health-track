@@ -14,7 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = auth()->user()->events()->get();
+        $events = auth()->user()->events()->simplePaginate(6);
         return view('events.index', compact('events'));
     }
 

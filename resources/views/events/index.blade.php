@@ -38,6 +38,9 @@
                 @endforeach
             </div>
         </div>
+        <div class="flex ml-4">
+            {{ $events->links() }}
+        </div>
     </div>
 
 </x-layout>
