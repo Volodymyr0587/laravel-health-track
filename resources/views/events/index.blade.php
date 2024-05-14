@@ -37,9 +37,9 @@
 
                 @endforeach
             </div>
-        </div>
-        <div class="flex ml-4">
-            {{ $events->links() }}
+            <div class="ml-4 mt-2">
+                {{ $events->links() }}
+            </div>
         </div>
     </div>
 
