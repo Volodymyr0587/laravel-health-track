@@ -17,7 +17,7 @@
     </li>
 
 
-    <x-sidebar.item routeName="events.index" label="{{ __('Health events') }}" >
+    <x-sidebar.item routeName="events.index" label="{{ __('Health events') }}" badge="{{ count_events() }}">
         <x-svg.health-events />
     </x-sidebar.item>
 

@@ -19,3 +19,14 @@ if ( !function_exists('count_attachments') ) {
         return $userAttachmentsCount;
     }
 }
+
+if (!function_exists('count_events')) {
+    function count_events() {
+        $user = auth()->user();
+
+        if ($user) {
+            return $user->events()->count();
+        }
+
+    }
+}
