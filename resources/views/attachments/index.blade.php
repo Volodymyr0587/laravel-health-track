@@ -13,39 +13,38 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                 @foreach ($events as $event)
-                <x-event.info label-name="Event name" event-field="{{ $event->name }}" class="font-bold" />
+                    @if ($event->media->isNotEmpty())
+                    <x-event.info label-name="Event name" event-field="{{ $event->name }}" class="font-bold" />
 
-                <div class="ml-10">
-                    @forelse ($event->media as $media)
-                    <x-event.info label-name="Event attachment {{ $loop->iteration }}"
-                        event-field="{{ $media->file_name }}">
-                    </x-event.info>
-                    <div class="flex flex-row my-5 space-x-2">
-                        @can('edit', $event)
-                        <x-forms.button
-                            url="{{ route('events.downloadAttachment', ['event' => $event->id, 'media' => $media->id]) }}"
-                            like="link">
-                            Download
-                        </x-forms.button>
-                        <form method="POST" class=""
-                            action="{{ route('attachments.destroy', ['event' => $event->id, 'media' => $media->id]) }}">
-                            @csrf
-                            @method('DELETE')
-
-                            <x-forms.button type="submit" like="button"
-                                onclick="return confirm('Are you sure you want to delete the record?')"
-                                class="bg-red-600 hover:bg-red-500 dark:bg-red-600 dark:hover:bg-red-500">
-                                Delete
+                    <div class="ml-10">
+                        @foreach ($event->media as $media)
+                        <x-event.info label-name="Event attachment {{ $loop->iteration }}"
+                            event-field="{{ $media->file_name }}">
+                        </x-event.info>
+                        <div class="flex flex-row my-5 space-x-2">
+                            @can('edit', $event)
+                            <x-forms.button
+                                url="{{ route('events.downloadAttachment', ['event' => $event->id, 'media' => $media->id]) }}"
+                                like="link">
+                                Download
                             </x-forms.button>
-                        </form>
+                            <form method="POST" class=""
+                                action="{{ route('attachments.destroy', ['event' => $event->id, 'media' => $media->id]) }}">
+                                @csrf
+                                @method('DELETE')
 
-                        @endcan
+                                <x-forms.button type="submit" like="button"
+                                    onclick="return confirm('Are you sure you want to delete the record?')"
+                                    class="bg-red-600 hover:bg-red-500 dark:bg-red-600 dark:hover:bg-red-500">
+                                    Delete
+                                </x-forms.button>
+                            </form>
+
+                            @endcan
+                        </div>
+                        @endforeach
                     </div>
-                    @empty
-                    <x-event.info label-name="Event attachment" event-field="{{ __('No attachments') }}" class="text-sm">
-                    </x-event.info>
-                    @endforelse
-                </div>
+                    @endif
                 @endforeach
             </div>
         </div>
