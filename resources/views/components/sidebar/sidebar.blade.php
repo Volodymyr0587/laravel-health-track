@@ -1,20 +1,13 @@
 <x-sidebar.layout>
     @auth
-    <li>
-        <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <x-svg.user />
-            <span class="flex-1 ms-3 whitespace-nowrap font-bold">{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</span>
-        </a>
-    </li>
+    <x-sidebar.item class="font-bold" routeName="home" label="{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}" >
+        <x-svg.user />
+    </x-sidebar.item>
     @endauth
-    <li>
-        <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <x-svg.dashboard />
-            <span class="flex-1 ms-3 whitespace-nowrap">{{ __("Dashboard") }}</span>
-        </a>
-    </li>
+
+    <x-sidebar.item routeName="home" label="{{ __('Dashboard') }}" >
+        <x-svg.dashboard />
+    </x-sidebar.item>
 
 
     <x-sidebar.item routeName="events.index" label="{{ __('Health events') }}" badge="{{ count_events() }}">
@@ -26,36 +19,22 @@
     </x-sidebar.item>
 
 
+    <x-sidebar.item routeName="home" label="{{ __('Users') }}" >
+        <x-svg.users />
+    </x-sidebar.item>
 
-    <li>
-        <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <x-svg.users />
-            <span class="flex-1 ms-3 whitespace-nowrap">{{ __("Users") }}</span>
-        </a>
-    </li>
-    <li>
-        <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <x-svg.products />
-            <span class="flex-1 ms-3 whitespace-nowrap">{{ __("Products") }}</span>
-        </a>
-    </li>
+    <x-sidebar.item routeName="home" label="{{ __('Products') }}" >
+        <x-svg.products />
+    </x-sidebar.item>
+
     @guest
-    <li>
-        <a href="{{ route('login') }}"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <x-svg.sign-in />
-            <span class="flex-1 ms-3 whitespace-nowrap">{{ __("Sign In") }}</span>
-        </a>
-    </li>
-    <li>
-        <a href="{{ route('register') }}"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <x-svg.sign-up />
-            <span class="flex-1 ms-3 whitespace-nowrap">{{ __("Sign Up") }}</span>
-        </a>
-    </li>
+    <x-sidebar.item routeName="login" label="{{ __('Log In') }}" >
+        <x-svg.sign-in />
+    </x-sidebar.item>
+
+    <x-sidebar.item routeName="register" label="{{ __('Register') }}" >
+        <x-svg.sign-up />
+    </x-sidebar.item>
     @endguest
 
     @auth
