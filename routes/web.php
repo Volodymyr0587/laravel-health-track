@@ -4,8 +4,8 @@ use App\Http\Controllers\AttachmentsController;
 use App\Http\Controllers\SearchEventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\SessionController;
-use App\Http\Controllers\RegisterUserController;
+use App\Http\Controllers\Auth\SessionController;
+use App\Http\Controllers\Auth\RegisterUserController;
 
 Route::get('/', function () {
     return view('home');
