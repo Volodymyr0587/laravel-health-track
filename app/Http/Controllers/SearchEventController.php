@@ -12,6 +12,11 @@ class SearchEventController extends Controller
      */
     public function __invoke(Request $request)
     {
+        // Validate the search input
+        $request->validate([
+            'search' => 'required|string|max:255',
+        ]);
+
         $search = $request->input('search');
 
         $events = auth()->user()->events()

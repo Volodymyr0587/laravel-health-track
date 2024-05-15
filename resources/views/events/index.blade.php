@@ -9,7 +9,7 @@
             <div class="mb-6">
                 <x-forms.button url="{{ route('events.create') }}" like="link">{{ __('Create Event') }}</x-forms.button>
 
-                <div class="mt-4">
+                <div class="mt-10">
                     <x-forms.form action="{{ route('search') }}">
                         <x-forms.input label="Search For Event" name="search" placeholder="Find a specific event" />
                         <x-forms.button type="submit" like="button">Searh</x-forms.button>
