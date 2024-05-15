@@ -21,7 +21,7 @@
                 @foreach ($events as $event)
                 <x-event.item eventRoute="{{ route('events.show', $event) }}" eventName="{{ $event->name }}"
                     eventLocation="{{ $event->location }}"
-                    eventTime="{{ \Carbon\Carbon::parse($event->event_time)->format('d-m-Y H:i:s') }}"
+                    eventTime="{{ to_day_date_time_string($event->event_time) }}"
                     eventPrice="{{ $event->price }}" eventUpdatedAt="{{ $event->updated_at->diffForHumans() }}" />
                 @endforeach
             </ul>

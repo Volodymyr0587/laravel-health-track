@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 if ( !function_exists('count_attachments') ) {
     function count_attachments() {
         $userAttachmentsCount = 0;
@@ -30,3 +32,10 @@ if (!function_exists('count_events')) {
 
     }
 }
+
+if (!function_exists('to_day_date_time_string')) {
+    function to_day_date_time_string($dateTimeObj) {
+        return Carbon::parse($dateTimeObj)->toDayDateTimeString();
+    }
+}
+
