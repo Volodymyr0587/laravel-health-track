@@ -10,6 +10,13 @@
                 <x-forms.button url="{{ route('events.index') }}" like="link">Back to Events</x-forms.button>
             </div>
 
+            <div class="mt-10">
+                <x-forms.form action="{{ route('search') }}">
+                    <x-forms.input label="{{ __('Looking for something else?') }}" name="search" placeholder="Find a specific event" />
+                    <x-forms.button type="submit" like="button">Searh</x-forms.button>
+                </x-forms.form>
+            </div>
+
             <ul role="list" class="divide-y divide-gray-100">
                 @foreach ($events as $event)
 
