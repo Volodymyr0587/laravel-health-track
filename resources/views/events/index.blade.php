@@ -26,7 +26,7 @@
                 @endforeach
             </ul>
 
-            <div class="ml-4 mt-2">
+            <div class="mt-2">
                 {{ $events->links() }}
             </div>
         </div>
