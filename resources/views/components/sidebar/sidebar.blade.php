@@ -19,8 +19,8 @@
     </x-sidebar.item>
 
 
-    <x-sidebar.item routeName="home" label="{{ __('Users') }}" >
-        <x-svg.users />
+    <x-sidebar.item routeName="home" label="{{ __('Treatment') }}" >
+        <x-svg.treatment />
     </x-sidebar.item>
 
     <x-sidebar.item routeName="home" label="{{ __('Products') }}" >
