@@ -34,8 +34,9 @@ if (!function_exists('count_events')) {
 }
 
 if (!function_exists('to_day_date_time_string')) {
-    function to_day_date_time_string($dateTimeObj) {
-        return Carbon::parse($dateTimeObj)->toDayDateTimeString();
+    function to_day_date_time_string($dateTimeObj, $locale = 'en') {
+        Carbon::setLocale($locale);
+        return Carbon::parse($dateTimeObj)->translatedFormat('l, j F Y H:i');
     }
 }
 
