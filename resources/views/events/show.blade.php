@@ -16,7 +16,7 @@
 
                         <x-event.info label-name="Event name" event-field="{{ $event->name }}" />
                         <x-event.info label-name="Event location" event-field="{{ $event->location }}" />
-                        <x-event.info label-name="Event date and time" event-field="{{ to_day_date_time_string($event->event_time, $locale = 'uk') }}" />
+                        <x-event.info label-name="Event date and time" event-field="{{ to_day_date_time_string($event->event_time) }}" />
                         <x-event.info label-name="Event description" event-field="{{ $event->description }}" />
                         <x-event.info label-name="Event price" event-field="{{ $event->price }}" />
                         @foreach ($event->getMedia('attachments') as $media)
