@@ -27,7 +27,7 @@
             </ul>
 
             <div class="mt-2">
-                {{ $events->links() }}
+                {{ $events->onEachSide(1)->links() }}
             </div>
         </div>
     </div>
