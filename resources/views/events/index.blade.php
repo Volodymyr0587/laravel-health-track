@@ -6,13 +6,16 @@
 
     <div class="p-4 sm:ml-64">
         <div class="p-4">
-            <div class="mb-6">
+
+            <x-hint>{{ __("Here you can view, search an events (visit to the doctor, routine examination, tests, etc.). Or press the button 'Create Event' to go to the form.") }}</x-hint>
+
+            <div class="mt-6 mb-6">
                 <x-forms.button url="{{ route('events.create') }}" like="link">{{ __('Create Event') }}</x-forms.button>
 
                 <div class="mt-10">
                     <x-forms.form action="{{ route('search') }}">
-                        <x-forms.input label="Search For Event" name="search" placeholder="Find a specific event" />
-                        <x-forms.button type="submit" like="button">Searh</x-forms.button>
+                        <x-forms.input label="{{ __('Search For Event') }}" name="search" placeholder="{{ __('Find a specific event') }}" />
+                        <x-forms.button type="submit" like="button">{{ __("Searсh") }}</x-forms.button>
                     </x-forms.form>
                 </div>
             </div>
