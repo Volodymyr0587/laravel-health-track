@@ -7,6 +7,7 @@
     <div class="p-4 sm:ml-64">
         <div class="p-4">
             <div class="mb-6">
+                <x-hint class="mb-8">{{ __("Here you can view all your files (attachments for health events)") }}</x-hint>
                 <x-forms.button url="{{ route('events.index') }}" like="link">{{ __('Back to Events') }}
                 </x-forms.button>
             </div>

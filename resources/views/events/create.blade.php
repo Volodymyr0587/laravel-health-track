@@ -7,8 +7,7 @@
     <div class="p-4 sm:ml-64">
         <div class="p-4">
 
-            <h2 class="text-base font-semibold leading-7 text-gray-900">{{ __("Hint") }}</h2>
-            <p class="mt-1 text-sm leading-6 text-gray-600">{{ __("Here you can create an event (visit to the doctor, routine examination, tests, etc.)") }}</p>
+            <x-hint>{{ __("Here you can create an event (visit to the doctor, routine examination, tests, etc.)") }}</x-hint>
 
             <x-forms.form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data">
 

@@ -18,12 +18,14 @@
             </div>
 
             <ul role="list" class="divide-y divide-gray-100">
-                @foreach ($events as $event)
+                @forelse ($events as $event)
                 <x-event.item eventRoute="{{ route('events.show', $event) }}" eventName="{{ $event->name }}"
                     eventLocation="{{ $event->location }}"
                     eventTime="{{ to_day_date_time_string($event->event_time) }}"
                     eventPrice="{{ $event->price }}" eventUpdatedAt="{{ $event->updated_at->diffForHumans() }}" />
-                @endforeach
+                @empty
+                <x-hint>{{ __("You currently have no events. Use the 'Create Event' button.") }}</x-hint>
+                @endforelse
             </ul>
 
             <div class="mt-2">
