@@ -14,8 +14,9 @@
     <x-sidebar.sidebar />
 
     <header class="bg-white shadow sm:ml-16 md:ml-64 lg:ml-16">
-        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div class="flex justify-between mx-auto sm:ml-48 md:ml-2 lg:ml-48 px-4 py-6 sm:px-6 lg:px-8">
             <h1 class="text-3xl font-bold tracking-tight text-healthtrack-light dark:text-healthtrack-dark">{{ $heading }}</h1>
+            <x-lang-switcher class="ml-auto"/>
         </div>
     </header>
 

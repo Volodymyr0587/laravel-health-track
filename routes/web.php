@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\AttachmentsController;
-use App\Http\Controllers\SearchEventController;
+use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\AttachmentsController;
+use App\Http\Controllers\SearchEventController;
 use App\Http\Controllers\Auth\SessionController;
 use App\Http\Controllers\Auth\RegisterUserController;
 
@@ -42,6 +43,9 @@ Route::middleware('auth')->name('attachments.')->group(function () {
     Route::get('/user/attachments', [AttachmentsController::class, 'index'])->name('index');
     Route::delete('/user/attachments/{event}/{media}', [AttachmentsController::class, 'destroy'])->name('destroy');
 });
+
+//% Localization
+Route::get('locale/{lang}', [LocaleController::class, 'setLocale'])->name('setLocale');
 
 //% Log Out
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');

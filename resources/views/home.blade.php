@@ -1,7 +1,7 @@
 <x-layout>
 
     <x-slot:heading>
-        Health Track
+        {{ __("Health Track") }}
     </x-slot:heading>
 
     <div class="p-4 sm:ml-64">
