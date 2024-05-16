@@ -6,11 +6,11 @@
 
 ```cp .env.example .env```
 
+```create mysql database``` **health_track**
+
 ```php artisan key:generate```
 
 ```php artisan migrate```
-
-* Agree to create sqlite database
 
 ```php artisan storage:link```
 
