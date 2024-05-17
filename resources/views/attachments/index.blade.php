@@ -19,7 +19,7 @@
 
                     <div class="ml-10">
                         @foreach ($event->media as $media)
-                        <x-event.info label-name="Event attachment {{ $loop->iteration }}"
+                        <x-event.info label-name="{{ __('Event attachment') }} {{ $loop->iteration }}"
                             event-field="{{ $media->file_name }}">
                         </x-event.info>
                         <div class="flex flex-row my-5 space-x-2">
@@ -27,7 +27,7 @@
                             <x-forms.button
                                 url="{{ route('events.downloadAttachment', ['event' => $event->id, 'media' => $media->id]) }}"
                                 like="link">
-                                Download
+                                {{ __("Download") }}
                             </x-forms.button>
                             <form method="POST" class=""
                                 action="{{ route('attachments.destroy', ['event' => $event->id, 'media' => $media->id]) }}">
@@ -37,7 +37,7 @@
                                 <x-forms.button type="submit" like="button"
                                     onclick="return confirm('Are you sure you want to delete the record?')"
                                     class="bg-red-600 hover:bg-red-500 dark:bg-red-600 dark:hover:bg-red-500">
-                                    Delete
+                                    {{ __("Delete") }}
                                 </x-forms.button>
                             </form>
 
