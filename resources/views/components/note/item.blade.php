@@ -2,7 +2,7 @@
 
 <li class="flex justify-between gap-x-6 py-5">
     <div class="flex min-w-0 gap-x-4">
-        <x-svg.heart />
+        <x-svg.note />
         <div class="min-w-0 flex-auto">
             <p class="text-base truncate font-semibold leading-6 text-healthtrack-light dark:text-healthtrack-dark">{{ $noteName }}</p>
             <a href="{{ $noteRoute }}"
