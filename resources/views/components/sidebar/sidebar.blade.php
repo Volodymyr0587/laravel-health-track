@@ -23,7 +23,7 @@
         <x-svg.treatment />
     </x-sidebar.item>
 
-    <x-sidebar.item routeName="home" label="{{ __('Notes') }}" >
+    <x-sidebar.item routeName="notes.index" label="{{ __('Notes') }}" badge="{{ count_notes() }}">
         <x-svg.notes />
     </x-sidebar.item>
 

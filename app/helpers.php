@@ -40,3 +40,14 @@ if (!function_exists('to_day_date_time_string')) {
     }
 }
 
+if (!function_exists('count_notes')) {
+    function count_notes() {
+        $user = auth()->user();
+
+        if ($user) {
+            return $user->notes()->count();
+        }
+
+    }
+}
+
