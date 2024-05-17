@@ -12,8 +12,8 @@
 
             <div class="mt-10">
                 <x-forms.form action="{{ route('search.note') }}">
-                    <x-forms.input label="{{ __('Looking for something else?') }}" name="searchNote" placeholder="Find a specific event" />
-                    <x-forms.button type="submit" like="button">{{ __("Searh") }}</x-forms.button>
+                    <x-forms.input label="{{ __('Looking for something else?') }}" name="searchNote" placeholder="{{ __('Find a specific note') }}" />
+                    <x-forms.button type="submit" like="button">{{ __("Search") }}</x-forms.button>
                 </x-forms.form>
             </div>
 

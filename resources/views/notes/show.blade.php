@@ -14,8 +14,8 @@
 
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
-                        <x-note.info label-name="Note name" note-field="{{ $note->name }}" />
-                        <x-note.info label-name="Note content" note-field="{{ $note->body }}" />
+                        <x-note.info label-name="{{ __('Note name') }}" note-field="{{ $note->name }}" />
+                        <x-note.info label-name="{{ __('Note content') }}" note-field="{{ $note->body }}" />
 
 
                     </div>
@@ -24,10 +24,10 @@
 
             <div class="sm:col-span-5">
                 <div class="mt-4 space-x-2">
-                    <x-forms.button url="{{ route('notes.index') }}" like="link">Back to Notes</x-forms.button>
+                    <x-forms.button url="{{ route('notes.index') }}" like="link">{{ __("Back to Notes") }}</x-forms.button>
 
                     @can('editNote', $note)
-                    <x-forms.button url="{{ route('notes.edit', $note) }}" like="link">Edit</x-forms.button>
+                    <x-forms.button url="{{ route('notes.edit', $note) }}" like="link">{{ __("Edit") }}</x-forms.button>
                     @endcan
                 </div>
             </div>

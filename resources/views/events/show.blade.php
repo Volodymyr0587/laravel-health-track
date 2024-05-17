@@ -16,7 +16,7 @@
 
                         <x-event.info label-name="Event name" event-field="{{ $event->name }}" />
                         <x-event.info label-name="Event location" event-field="{{ $event->location }}" />
-                        <x-event.info label-name="Event date and time" event-field="{{ to_day_date_time_string($event->event_time) }}" />
+                        <x-event.info label-name="Event date and time" event-field="{{ to_day_date_time_string($event->event_time, $locale=session()->get('locale')) }}" />
                         <x-event.info label-name="Event description" event-field="{{ $event->description }}" />
                         <x-event.info label-name="Event price" event-field="{{ $event->price }}" />
                         @foreach ($event->getMedia('attachments') as $media)
@@ -32,10 +32,10 @@
 
             <div class="sm:col-span-5">
                 <div class="mt-4 space-x-2">
-                    <x-forms.button url="{{ route('events.index') }}" like="link">Back to Events</x-forms.button>
+                    <x-forms.button url="{{ route('events.index') }}" like="link">{{ __("Back to Events") }}</x-forms.button>
 
                     @can('edit', $event)
-                    <x-forms.button url="{{ route('events.edit', $event) }}" like="link">Edit</x-forms.button>
+                    <x-forms.button url="{{ route('events.edit', $event) }}" like="link">{{ __("Edit") }}</x-forms.button>
                     @endcan
                 </div>
             </div>

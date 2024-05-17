@@ -11,14 +11,14 @@
 
             <x-forms.form action="{{ route('notes.store') }}" method="POST">
 
-                <x-forms.input label="Note Name" name="name" placeholder="Useful physical exercises to improve the condition of the spine" />
+                <x-forms.input label="{{ __('Note name') }}" name="name" placeholder="{{ __('Useful physical exercises to improve the condition of the spine') }}" />
 
-                <x-forms.textarea label="Note Body" name="body"  />
+                <x-forms.textarea label="{{ __('Note content') }}" name="body"  />
 
                 <div class="flex space-x-2">
-                    <x-forms.button url="{{ route('notes.index') }}" like="link">Cancel</x-forms.button>
+                    <x-forms.button url="{{ route('notes.index') }}" like="link">{{ __("Cancel") }}</x-forms.button>
                     @auth
-                    <x-forms.button type="submit" like="button">Create</x-forms.button>
+                    <x-forms.button type="submit" like="button">{{ __("Create") }}</x-forms.button>
                     @endauth
                 </div>
             </x-forms.form>

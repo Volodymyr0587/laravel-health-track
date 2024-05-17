@@ -15,7 +15,7 @@
                 <div class="mt-10">
                     <x-forms.form action="{{ route('search') }}">
                         <x-forms.input label="{{ __('Search For Event') }}" name="search" placeholder="{{ __('Find a specific event') }}" />
-                        <x-forms.button type="submit" like="button">{{ __("Searсh") }}</x-forms.button>
+                        <x-forms.button type="submit" like="button">{{ __("Search") }}</x-forms.button>
                     </x-forms.form>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                 @forelse ($events as $event)
                 <x-event.item eventRoute="{{ route('events.show', $event) }}" eventName="{{ $event->name }}"
                     eventLocation="{{ $event->location }}"
-                    eventTime="{{ to_day_date_time_string($event->event_time) }}"
+                    eventTime="{{ to_day_date_time_string($event->event_time, $locale = session()->get('locale')) }}"
                     eventPrice="{{ $event->price }}" eventUpdatedAt="{{ $event->updated_at->diffForHumans() }}" />
                 @empty
                 <x-hint>{{ __("You currently have no events. Use the 'Create Event' button.") }}</x-hint>
