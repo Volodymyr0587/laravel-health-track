@@ -23,8 +23,8 @@
         <x-svg.treatment />
     </x-sidebar.item>
 
-    <x-sidebar.item routeName="home" label="{{ __('Products') }}" >
-        <x-svg.products />
+    <x-sidebar.item routeName="home" label="{{ __('Notes') }}" >
+        <x-svg.notes />
     </x-sidebar.item>
 
     @guest
