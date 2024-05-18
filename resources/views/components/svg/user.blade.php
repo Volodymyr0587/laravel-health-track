@@ -1,4 +1,4 @@
-<svg class="w-5 h-5 text-white transition duration-75 dark:text-gray-400" aria-hidden="true" fill="currentColor"
+<svg class="flex-shrink-0 w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" fill="currentColor"
     viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
