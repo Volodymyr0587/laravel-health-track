@@ -16,7 +16,7 @@
                 <x-forms.input label="Event date and time" name="event_time" type="datetime-local" />
                 <x-forms.textarea label="Event description" name="description"  />
                 <x-forms.input label="Event price (if free, leave the field empty)" name="price" placeholder="750.00" />
-                <x-forms.input label="File upload (Referral to a doctor, etc)" name="attachment" type="file" />
+                <x-forms.input class="text-gray-500" label="File upload (Referral to a doctor, etc)" name="attachment" type="file" />
 
                 <div class="flex space-x-2">
                     <x-forms.button url="{{ route('events.index') }}" like="link">{{ __("Cancel") }}</x-forms.button>

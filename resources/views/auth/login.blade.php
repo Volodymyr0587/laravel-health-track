@@ -11,7 +11,7 @@
             <x-forms.input label="{{ __('Password') }}" name="password" type="password" />
 
             <x-forms.button like="button">{{ __("Log In") }}</x-forms.button>
-            <p>{{ __("Still don't have an account?") }} <a href="{{ route('register') }}" class="text-blue-500 underline">{{ __("Register now") }}.</a></p>
+            <p class="dark:text-white">{{ __("Still don't have an account?") }} <a href="{{ route('register') }}" class="text-blue-500 underline">{{ __("Register now") }}.</a></p>
         </x-forms.form>
 
     </div>

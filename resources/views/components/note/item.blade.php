@@ -4,7 +4,7 @@
     <div class="flex min-w-0 gap-x-4">
         <x-svg.note />
         <div class="min-w-0 flex-auto">
-            <p class="text-base truncate font-semibold leading-6 text-healthtrack-light dark:text-healthtrack-dark">{{ $noteName }}</p>
+            <p class="text-base truncate font-semibold leading-6 text-healthtrack-light dark:text-white">{{ $noteName }}</p>
             <a href="{{ $noteRoute }}"
                 class="mt-1 truncate text-sm leading-5 text-blue-600 transition-all duration-150 ease-in-out hover:underline hover:font-bold ">
                 {{ __("Show details...") }}

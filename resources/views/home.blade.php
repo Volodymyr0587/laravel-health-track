@@ -135,7 +135,7 @@
 
     <div class="sm:ml-64">
         <!-- HERO -->
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-white text-gray-900 dark:bg-healthtrack-dark dark:text-white">
     <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
         <a href="#" class="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
             <span class="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span class="text-sm font-medium">Flowbite is out! See what's new</span>
@@ -191,7 +191,7 @@
 <!-- END HERO -->
 
 <!-- CONTENT -->
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-white text-gray-900 dark:bg-healthtrack-dark dark:text-white">
     <div class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
         <div class="text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">We didn't reinvent the wheel</h2>
@@ -207,7 +207,7 @@
 <!-- END CONTENT -->
 
 <!-- FEATURE -->
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-white text-gray-900 dark:bg-healthtrack-dark dark:text-white">
   <div class="max-w-screen-xl px-4 py-8 mx-auto sm:py-16 lg:px-6">
       <div class="max-w-screen-md mb-8 lg:mb-16">
           <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">Designed for business teams like yours</h2>
@@ -262,7 +262,7 @@
 <!-- END FEATURE -->
 
 <!-- CTA -->
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-white text-gray-900 dark:bg-healthtrack-dark dark:text-white">
     <div class="items-center max-w-screen-xl gap-8 px-4 py-8 mx-auto xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
         <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
         <img class="hidden w-full dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
@@ -279,7 +279,7 @@
 <!-- END CTA -->
 
 <!-- FOOTER -->
-<footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
+<footer class="p-4 bg-white text-gray-900 dark:bg-healthtrack-dark dark:text-white">
     <div class="max-w-screen-xl mx-auto">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
