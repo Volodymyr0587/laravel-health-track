@@ -220,7 +220,7 @@
                         src="{{ asset('storage/images/health-3.jpg') }}"
                         alt="office content 1">
                     <img class="w-full mt-4 rounded-lg lg:mt-10"
-                        src="{{ asset('storage/images/health-5.png') }}"
+                        src="{{ asset('storage/images/health-6.jpg') }}"
                         alt="office content 2">
                 </div>
             </div>
