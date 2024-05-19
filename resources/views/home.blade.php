@@ -2,6 +2,7 @@
 
     <x-slot:heading>
         {{ __("Health Track") }}
+        <p class="text-base text-healthtrack-dark dark:text-healthtrack-light">{{ __("Your health is in good hands") }}.</p>
     </x-slot:heading>
 
     {{-- <div class="p-4 sm:ml-64">
