@@ -1,6 +1,6 @@
 <div {{ $attributes->merge(["class" => ""]) }}>
     <x-forms.button like="button" id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
-        class="inline-flex items-center px-2.5"
+        class="inline-flex items-center px-2.5 bg-white dark:bg-healthtrack-dark"
         type="button">
         <div class="flex items-center">
             @if (session()->get('locale') === 'en')
