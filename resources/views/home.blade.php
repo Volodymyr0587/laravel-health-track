@@ -206,10 +206,10 @@
                     <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">{{ __("Everything for your health in one app") }}</h2>
                     <p class="mb-4">
                         <ul>
-                            <li class="mb-4"><span class="font-bold">{{ __("Visit tracking. ") }}</span>{{ __("Easily record and review all your visits to the doctor.") }}</li>
-                            <li class="mb-4"><span class="font-bold">{{ __("Scheduling exams. ") }}</span>{{ __("Create reminders for scheduled medical checkups.") }}</li>
-                            <li class="mb-4"><span class="font-bold">{{ __("Treatment and prescriptions. ") }}</span>{{ __("Keep all the necessary documents, prescriptions, and treatment instructions.") }}</li>
-                            <li class="mb-4"><span class="font-bold">{{ __("Medications. ") }}</span>{{ __("Create a medication schedule and get notifications.") }}</li>
+                            <li class="mb-4"><span class="font-bold text-healthtrack-light dark:text-healthtrack-light-hover">{{ __("Visit tracking. ") }}</span>{{ __("Easily record and review all your visits to the doctor.") }}</li>
+                            <li class="mb-4"><span class="font-bold text-healthtrack-light dark:text-healthtrack-light-hover">{{ __("Scheduling exams. ") }}</span>{{ __("Create reminders for scheduled medical checkups.") }}</li>
+                            <li class="mb-4"><span class="font-bold text-healthtrack-light dark:text-healthtrack-light-hover">{{ __("Treatment and prescriptions. ") }}</span>{{ __("Keep all the necessary documents, prescriptions, and treatment instructions.") }}</li>
+                            <li class="mb-4"><span class="font-bold text-healthtrack-light dark:text-healthtrack-light-hover">{{ __("Medications. ") }}</span>{{ __("Create a medication schedule and get notifications.") }}</li>
                             <li class="font-bold">{{ __("And much more") }}...</li>
                         </ul>
                     </p>
