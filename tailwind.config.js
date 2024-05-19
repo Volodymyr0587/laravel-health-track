@@ -15,7 +15,11 @@ export default {
             "healthtrack-light-hover": "rgb(97, 242, 97)",
 
             "healthtrack-button-dark": "rgb(52, 138, 52)",
-            "healthtrack-button-dark-hover": "rgb(16, 87, 16)"
+            "healthtrack-button-dark-hover": "rgb(16, 87, 16)",
+
+            "youtube-logo": "rgb(255, 0, 0)",
+            "facebook-logo": "rgb(8, 102, 255)",
+            "x-logo": "rgb(231, 233, 234)"
         }
     },
   },
