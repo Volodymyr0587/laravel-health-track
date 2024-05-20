@@ -169,16 +169,6 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </a>
-                    {{-- <a href="#"
-                        class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                        <svg class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z">
-                            </path>
-                        </svg>
-                        Watch video
-                    </a> --}}
                 </div>
                 @endguest
 
@@ -296,19 +286,21 @@
             <div
                 class="items-center max-w-screen-xl gap-8 px-4 py-8 mx-auto xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                 <img class="w-full dark:hidden"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg"
-                    alt="dashboard image">
+                    src="{{ asset('storage/images/health-events-light.png') }}"
+                    alt="health image">
                 <img class="hidden w-full dark:block"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"
-                    alt="dashboard image">
+                    src="{{ asset('storage/images/health-events-dark.png') }}"
+                    alt="health image">
                 <div class="mt-4 md:mt-0">
-                    <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">Let's create
-                        more tools and ideas that brings us together.</h2>
-                    <p class="mb-6 text-gray-500 md:text-lg dark:text-gray-400">Flowbite helps you connect with friends
-                        and communities of people who share your interests. Connecting with your friends and family as
-                        well as discovering new ones is easy with features like Groups.</p>
-                    <a href="#"
-                        class="inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-blue-900">
+                    <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">{{ __("A few simple steps to a healthy life") }}</h2>
+                        <ul>
+                            <li class="mb-4"><span class="font-bold text-healthtrack-light dark:text-healthtrack-light-hover">{{ __("Registration: ") }}</span>{{ __("Create your personal account.") }}</li>
+                            <li class="mb-4"><span class="font-bold text-healthtrack-light dark:text-healthtrack-light-hover">{{ __("Adding information: ") }}</span>{{ __("Enter details about your visits, treatments and medications.") }}</li>
+                            <li class="mb-4"><span class="font-bold text-healthtrack-light dark:text-healthtrack-light-hover">{{ __("Organize: ") }}</span>{{ __("Use our planning and reminder tools.") }}</li>
+                            <li class="mb-4"><span class="font-bold text-healthtrack-light dark:text-healthtrack-light-hover">{{ __("Use: ") }}</span>{{ __("Enjoy confidence in your health.") }}</li>
+                        </ul>
+                    <a href="{{ route('register') }}"
+                        class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-healthtrack-light hover:bg-healthtrack-light-hover dark:bg-healthtrack-button-dark dark:hover:healthtrack-button-dark-hover">
                         Get started
                         <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
