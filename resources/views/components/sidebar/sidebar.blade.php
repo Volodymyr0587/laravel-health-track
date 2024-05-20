@@ -3,15 +3,17 @@
     <x-sidebar.user-name class="font-bold" firstName="{{ auth()->user()->first_name }}" lastName="{{ auth()->user()->last_name }}" >
         <x-svg.user />
     </x-sidebar.user-name>
-
-    <x-sidebar.item routeName="home" label="{{ __('Dashboard') }}" >
-        <x-svg.dashboard />
-    </x-sidebar.item>
     @endauth
 
     <x-sidebar.item routeName="home" label="{{ __('Home') }}">
         <x-svg.home />
     </x-sidebar.item>
+
+    @auth
+    <x-sidebar.item routeName="home" label="{{ __('Dashboard') }}" >
+        <x-svg.dashboard />
+    </x-sidebar.item>
+    @endauth
 
     <x-sidebar.item routeName="events.index" label="{{ __('Health events') }}" badge="{{ count_events() }}">
         <x-svg.health-events />
