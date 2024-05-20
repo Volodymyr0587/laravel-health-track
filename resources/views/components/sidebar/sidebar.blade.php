@@ -1,8 +1,8 @@
 <x-sidebar.layout>
     @auth
-    <x-sidebar.item-not-link class="font-bold" label="{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}" >
+    <x-sidebar.user-name class="font-bold" firstName="{{ auth()->user()->first_name }}" lastName="{{ auth()->user()->last_name }}" >
         <x-svg.user />
-    </x-sidebar.item-not-link>
+    </x-sidebar.user-name>
 
     <x-sidebar.item routeName="home" label="{{ __('Dashboard') }}" >
         <x-svg.dashboard />
