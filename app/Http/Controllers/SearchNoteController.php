@@ -19,8 +19,10 @@ class SearchNoteController extends Controller
         $search = $request->input('searchNote');
 
         $notes = auth()->user()->notes()
-            ->where('name', 'LIKE', "%{$search}%")
-            ->orWhere('body', 'LIKE', "%{$search}%")
+            ->where(function ($query) use ($search) {
+                $query->where('name', 'LIKE', "%{$search}%")
+                    ->orWhere('body', 'LIKE', "%{$search}%");
+            })
             ->get();
 
         return view('notes.search', compact('notes', 'search'));

@@ -20,9 +20,11 @@ class SearchEventController extends Controller
         $search = $request->input('search');
 
         $events = auth()->user()->events()
-            ->where('name', 'LIKE', "%{$search}%")
-            ->orWhere('description', 'LIKE', "%{$search}%")
-            ->orWhere('location', 'LIKE', "%{$search}%")
+            ->where(function ($query) use ($search) {
+                $query->where('name', 'LIKE', "%{$search}%")
+                    ->orWhere('description', 'LIKE', "%{$search}%")
+                    ->orWhere('location', 'LIKE', "%{$search}%");
+            })
             ->get();
 
         return view('events.search', compact('events', 'search'));
