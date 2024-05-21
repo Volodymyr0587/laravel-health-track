@@ -175,6 +175,7 @@
                             <li class="mb-4"><span class="font-bold text-healthtrack-light dark:text-healthtrack-light-hover">{{ __("Organize: ") }}</span>{{ __("Use our planning and reminder tools.") }}</li>
                             <li class="mb-4"><span class="font-bold text-healthtrack-light dark:text-healthtrack-light-hover">{{ __("Use: ") }}</span>{{ __("Enjoy confidence in your health.") }}</li>
                         </ul>
+                    @guest
                     <a href="{{ route('register') }}"
                         class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-healthtrack-light hover:bg-healthtrack-light-hover dark:bg-healthtrack-button-dark dark:hover:healthtrack-button-dark-hover">
                         Get started
@@ -185,6 +186,7 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </a>
+                    @endguest
                 </div>
             </div>
         </section>
