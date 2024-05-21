@@ -246,13 +246,13 @@
                     </span>
                     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                         <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                            <x-svg.facebook-footer />
-                        </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                             <x-svg.youtube-footer />
                         </a>
                         <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                             <x-svg.x-footer />
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            <x-svg.facebook-footer />
                         </a>
                     </div>
                 </div>
