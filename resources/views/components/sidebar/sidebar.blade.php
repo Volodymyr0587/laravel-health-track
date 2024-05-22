@@ -23,6 +23,9 @@
         <x-svg.attachments />
     </x-sidebar.item>
 
+    <x-sidebar.item routeName="home" label="{{ __('Diseases') }}">
+        <x-svg.diseases />
+    </x-sidebar.item>
 
     <x-sidebar.item routeName="home" label="{{ __('Treatment') }}" >
         <x-svg.treatment />
