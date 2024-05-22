@@ -10,7 +10,7 @@
     </x-sidebar.item>
 
     @auth
-    <x-sidebar.item routeName="home" label="{{ __('Dashboard') }}" >
+    <x-sidebar.item routeName="dashboard" label="{{ __('Dashboard') }}" >
         <x-svg.dashboard />
     </x-sidebar.item>
     @endauth

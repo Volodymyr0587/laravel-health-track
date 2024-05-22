@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\EventController;
@@ -23,6 +24,8 @@ Route::middleware('guest')->group(function () {
     Route::get('/login', [SessionController::class, 'create'])->name('login');
     Route::post('/login', [SessionController::class, 'store']);
 });
+
+Route::get('/dashboard', DashboardController::class)->middleware('auth')->name('dashboard');
 
 //% Events
 Route::middleware('auth')->name('events.')->group(function () {
