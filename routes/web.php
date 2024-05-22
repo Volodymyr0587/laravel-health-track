@@ -25,6 +25,7 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [SessionController::class, 'store']);
 });
 
+//% Dashboard
 Route::get('/dashboard', DashboardController::class)->middleware('auth')->name('dashboard');
 
 //% Events
