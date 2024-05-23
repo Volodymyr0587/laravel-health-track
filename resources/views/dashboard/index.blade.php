@@ -9,13 +9,22 @@
 
             <x-hint>{{ __("Hi") }}, {{ $user->fullName }}. {{ __("Here you can view your statistics") }}</x-hint>
 
-            <div class="mt-6 mb-6">
+            <div class="mt-6 mb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
 
-
+                <x-statistic-item label="{{ __('Total number of Events') }}" :count="$numberOfevents">
+                    <x-svg.heart class="h-6 w-6" />
+                </x-statistic-item>
+                <x-statistic-item label="{{ __('Total price of Events') }}" :count="$totalEventsPrice">
+                    <x-svg.price class="h-6 w-6" />
+                </x-statistic-item>
+                <x-statistic-item label="{{ __('Total number of Treatments') }}" :count="$numberOfTreatments">
+                    <x-svg.treatment-stat class="h-6 w-6" />
+                </x-statistic-item>
+                <x-statistic-item label="{{ __('Total price of Treatments') }}" :count="$totalTreatmentsPrice">
+                    <x-svg.price class="h-6 w-6" />
+                </x-statistic-item>
 
             </div>
-
-
         </div>
     </div>
 

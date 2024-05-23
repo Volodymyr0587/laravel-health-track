@@ -13,6 +13,14 @@ class DashboardController extends Controller
     {
         $user = auth()->user();
 
-        return view('dashboard.index', compact('user'));
+        $numberOfevents = $user->events()->count();
+        $totalEventsPrice = $user->events()->pluck('price')->sum();
+
+        $numberOfTreatments = $user->treatments()->count();
+        $totalTreatmentsPrice = $user->treatments()->pluck('price')->sum();
+
+        return view('dashboard.index',
+            compact('user', 'numberOfevents', 'totalEventsPrice', 'numberOfTreatments', 'totalTreatmentsPrice')
+        );
     }
 }
