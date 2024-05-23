@@ -40,6 +40,17 @@ if (!function_exists('to_day_date_time_string')) {
     }
 }
 
+if (!function_exists('count_diseases')) {
+    function count_diseases() {
+        $user = auth()->user();
+
+        if ($user) {
+            return $user->diseases()->count();
+        }
+
+    }
+}
+
 if (!function_exists('count_notes')) {
     function count_notes() {
         $user = auth()->user();

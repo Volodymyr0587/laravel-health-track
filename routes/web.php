@@ -1,14 +1,16 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\DiseaseController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SearchNoteController;
 use App\Http\Controllers\AttachmentsController;
 use App\Http\Controllers\SearchEventController;
 use App\Http\Controllers\Auth\SessionController;
+use App\Http\Controllers\SearchDiseaseController;
 use App\Http\Controllers\Auth\RegisterUserController;
 
 Route::get('/', function () {
@@ -61,6 +63,21 @@ Route::middleware('auth')->name('notes.')->group(function () {
     Route::patch('/notes/{note}', [NoteController::class, 'update'])->can('editNote', 'note')->name('update');
     Route::delete('/notes/{note}', [NoteController::class, 'destroy'])->can('editNote', 'note')->name('destroy');
 });
+
+
+//% Diseases
+Route::middleware('auth')->name('diseases.')->group(function () {
+    Route::get('/diseases', [DiseaseController::class, 'index'])->name('index');
+    Route::get('/diseases/create', [DiseaseController::class, 'create'])->name('create');
+    Route::post('/diseases', [DiseaseController::class, 'store'])->name('store');
+    Route::get('/diseases/{disease}', [DiseaseController::class, 'show'])->name('show');
+    Route::get('/diseases/{disease}/edit', [DiseaseController::class, 'edit'])->can('editDisease', 'disease')->name('edit');
+    Route::patch('/diseases/{disease}', [DiseaseController::class, 'update'])->can('editDisease', 'disease')->name('update');
+    Route::delete('/diseases/{disease}', [DiseaseController::class, 'destroy'])->can('editDisease', 'disease')->name('destroy');
+});
+
+//% Search diseases
+Route::get('/search-disease', SearchDiseaseController::class)->middleware('auth')->name('search.disease');
 
 //% Search notes
 Route::get('/search-note', SearchNoteController::class)->middleware('auth')->name('search.note');
