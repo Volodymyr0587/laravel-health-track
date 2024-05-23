@@ -23,6 +23,7 @@
             <ul role="list" class="divide-y divide-gray-100">
                 @forelse ($treatments as $treatment)
                 <x-treatment.item treatmentRoute="{{ route('treatments.show', $treatment) }}" treatmentName="{{ $treatment->name }}"
+                treatmentPrice="{{ $treatment->price }}" treatmentDescription="{{ Str::limit($treatment->description, 25) }}"
                 treatmentUpdatedAt="{{ $treatment->updated_at->diffForHumans() }}" />
                 @empty
                 <x-hint>{{ __("You currently have no treatments. Use the 'Create Treatment' button.") }}</x-hint>

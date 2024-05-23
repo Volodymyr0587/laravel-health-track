@@ -22,6 +22,8 @@
 
                 <x-forms.textarea label="{{ __('Treatment description') }}" name="description" />
 
+                <x-forms.input label="Treatment price (if free, leave the field empty)" name="price" placeholder="750.00" />
+
                 <div class="flex space-x-2">
                     <x-forms.button url="{{ route('treatments.index') }}" like="link">{{ __("Cancel") }}
                     </x-forms.button>

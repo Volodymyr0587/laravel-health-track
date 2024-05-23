@@ -23,6 +23,7 @@
 
                 <x-forms.input label="{{ __('Treatment name') }}" name="name" value="{{ $treatment->name }}" />
                 <x-forms.textarea label="{{ __('Treatment description') }}" name="description" value="{{ $treatment->description }}" />
+                <x-forms.input label="Treatment price (if free, leave the field empty)" name="price" value="{{ $treatment->price }}" />
 
                 <div class="flex space-x-2">
                     <x-forms.button url="{{ route('treatments.show', $treatment) }}" like="link">{{ __("Cancel") }}</x-forms.button>

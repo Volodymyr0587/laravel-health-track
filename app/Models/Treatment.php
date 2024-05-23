@@ -16,4 +16,9 @@ class Treatment extends Model
     {
         return $this->belongsTo(Disease::class);
     }
+
+    public function setPriceAttribute($value)
+    {
+        $this->attributes['price'] = $value ? round($value, 2) : '0.00';
+    }
 }

@@ -25,6 +25,7 @@ class UpdateTreatmentRequest extends FormRequest
             'disease_id' => 'required|exists:diseases,id',
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'price' => 'nullable|numeric|min:0',
         ];
     }
 }

@@ -15,8 +15,8 @@
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
                         <x-treatment.info label-name="{{ __('Treatment name') }}" treatment-field="{{ $treatment->name }}" />
-                        <x-treatment.info label-name="{{ __('Treatment description') }}" treatment-field="{{ $treatment->description }}" />
                         <x-treatment.info label-name="{{ __('Treatment for') }}" treatment-field="{{ $treatment->disease->name }}" />
+                        <x-treatment.info label-name="{{ __('Treatment description') }}" treatment-field="{{ $treatment->description }}" />
 
                     </div>
                 </div>

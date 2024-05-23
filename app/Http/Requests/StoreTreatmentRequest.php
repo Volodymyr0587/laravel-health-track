@@ -25,6 +25,16 @@ class StoreTreatmentRequest extends FormRequest
             'disease_id' => 'required|exists:diseases,id',
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'price' => 'nullable|numeric|min:0',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'price.numeric' => 'The price must be a number.',
+            'price.min' => 'The price must be at least 0.',
+            // Customize messages for other rules if needed
         ];
     }
 }
