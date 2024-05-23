@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\SearchTreatmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\DiseaseController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\SearchNoteController;
 use App\Http\Controllers\AttachmentsController;
 use App\Http\Controllers\SearchEventController;
@@ -76,8 +78,23 @@ Route::middleware('auth')->name('diseases.')->group(function () {
     Route::delete('/diseases/{disease}', [DiseaseController::class, 'destroy'])->can('editDisease', 'disease')->name('destroy');
 });
 
+
+//% Treatments
+Route::middleware('auth')->name('treatments.')->group(function () {
+    Route::get('/treatments', [TreatmentController::class, 'index'])->name('index');
+    Route::get('/treatments/create', [TreatmentController::class, 'create'])->name('create');
+    Route::post('/treatments', [TreatmentController::class, 'store'])->name('store');
+    Route::get('/treatments/{treatment}', [TreatmentController::class, 'show'])->name('show');
+    Route::get('/treatments/{treatment}/edit', [TreatmentController::class, 'edit'])->can('editTreatment', 'treatment')->name('edit');
+    Route::patch('/treatments/{treatment}', [TreatmentController::class, 'update'])->can('editTreatment', 'treatment')->name('update');
+    Route::delete('/treatments/{treatment}', [TreatmentController::class, 'destroy'])->can('editTreatment', 'treatment')->name('destroy');
+});
+
 //% Search diseases
 Route::get('/search-disease', SearchDiseaseController::class)->middleware('auth')->name('search.disease');
+
+//% Search treatments
+Route::get('/search-treatment', SearchTreatmentController::class)->middleware('auth')->name('search.treatment');
 
 //% Search notes
 Route::get('/search-note', SearchNoteController::class)->middleware('auth')->name('search.note');

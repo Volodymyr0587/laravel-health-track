@@ -27,7 +27,7 @@
         <x-svg.diseases />
     </x-sidebar.item>
 
-    <x-sidebar.item routeName="home" label="{{ __('Treatment') }}" >
+    <x-sidebar.item routeName="treatments.index" label="{{ __('Treatment') }}" badge="{{ count_treatments() }}">
         <x-svg.treatment />
     </x-sidebar.item>
 

@@ -62,3 +62,14 @@ if (!function_exists('count_notes')) {
     }
 }
 
+if (!function_exists('count_treatments')) {
+    function count_treatments() {
+        $user = auth()->user();
+
+        if ($user) {
+            return $user->countTreatments();
+        }
+
+    }
+}
+

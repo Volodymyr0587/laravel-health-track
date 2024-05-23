@@ -58,6 +58,16 @@ class User extends Authenticatable
         return $this->hasMany(Disease::class);
     }
 
+    public function treatments()
+    {
+        return $this->hasManyThrough(Treatment::class, Disease::class);
+    }
+
+    public function countTreatments()
+    {
+        return $this->treatments()->count();
+    }
+
     public function notes(): HasMany
     {
         return $this->hasMany(Note::class);
