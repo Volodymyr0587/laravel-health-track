@@ -26,6 +26,27 @@
 
             </div>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <canvas id="eventPricesOverTime"></canvas>
+            </div>
+            <div>
+                <canvas id="eventsPriceChart"></canvas>
+            </div>
+            <div>
+                <canvas id="treatmentsChart"></canvas>
+            </div>
+            <div>
+                <canvas id="treatmentsPriceChart"></canvas>
+            </div>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+    </script>
 
 </x-layout>

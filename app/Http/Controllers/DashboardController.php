@@ -20,7 +20,13 @@ class DashboardController extends Controller
         $totalTreatmentsPrice = $user->treatments()->pluck('price')->sum();
 
         return view('dashboard.index',
-            compact('user', 'numberOfevents', 'totalEventsPrice', 'numberOfTreatments', 'totalTreatmentsPrice')
+            compact(
+                'user',
+                'numberOfevents',
+                'totalEventsPrice',
+                'numberOfTreatments',
+                'totalTreatmentsPrice',
+            )
         );
     }
 }
