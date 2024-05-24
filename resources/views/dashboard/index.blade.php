@@ -31,7 +31,7 @@
             <div class="w-full">
                 <canvas id="totalNumbersAndPrices"></canvas>
             </div>
-            <div class="w-full">
+            <div class="w-full h-80">
                 <canvas id="priceDistribution"></canvas>
             </div>
         </div>
