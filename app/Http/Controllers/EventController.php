@@ -85,7 +85,6 @@ class EventController extends Controller
 
         flash()->success('Your event has been updated.');
 
-        // return to_route('events.index');
         return to_route('events.show', $event->id);
     }
 

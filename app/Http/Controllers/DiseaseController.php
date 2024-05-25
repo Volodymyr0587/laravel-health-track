@@ -66,7 +66,7 @@ class DiseaseController extends Controller
 
         flash()->success('Disease updated successfully');
 
-        return to_route('diseases.index');
+        return to_route('diseases.show', $disease->id);
     }
 
     /**
