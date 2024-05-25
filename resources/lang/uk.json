@@ -73,5 +73,22 @@
     "Search Results For ": "Результати пошуку для ",
     "Find a specific note": "Знайти конкретну нотатку",
     "Looking for something else?": "Шукаєте щось інше?",
-    "Are you sure you want to delete the record?": "Ви впевнені, що хочете видалити запис?"
+    "Are you sure you want to delete the record?": "Ви впевнені, що хочете видалити запис?",
+
+    "Your event has been created.": "Ваша подія створена.",
+    "Your event has been updated.": "Вашу подію оновлено.",
+    "Your event has been deleted.": "Вашу подію видалено",
+    "Attachment deleted successfully": "Вкладення успішно видалено",
+
+    "Disease added successfully": "Захворювання успішно додано",
+    "Disease updated successfully": "Захворювання успішно оновлено",
+    "Disease deleted successfully": "Захворювання успішно видалено",
+
+    "Your treatment has been created.": "Ваше лікування створено",
+    "Your treatment has been updated.": "Ваше лікування оновлено",
+    "Your treatment has been deleted.": "Ваше лікування видалено",
+
+    "Your note has been created.": "Вашу нотатку створено",
+    "Your note has been updated.": "Вашу нотатку оновлено.",
+    "Your note has been deleted.": "Вашу нотатку видалено."
 }

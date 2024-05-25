@@ -78,6 +78,6 @@ class NoteController extends Controller
 
         flash()->flash('warning', 'Your note has been deleted.', [], 'Success');
 
-        return to_route('notes.index')->with('message', 'Note deleted successfully');
+        return to_route('notes.index');
     }
 }
