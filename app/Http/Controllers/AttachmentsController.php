@@ -25,6 +25,8 @@ class AttachmentsController extends Controller
 
         $media->delete();
 
-        return redirect()->back()->with('success', 'Attachment deleted successfully');
+        flash()->flash('warning', 'Attachment deleted successfully', [], 'Success');
+
+        return redirect()->back();
     }
 }

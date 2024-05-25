@@ -34,7 +34,9 @@ class NoteController extends Controller
 
         $note = auth()->user()->notes()->create($validatedData);
 
-        return to_route('notes.index')->with('message', 'Note created successfully');
+        flash()->success('Your note has been created.');
+
+        return to_route('notes.index');
     }
 
     /**
@@ -62,7 +64,9 @@ class NoteController extends Controller
 
         $note->update($validatedData);
 
-        return to_route('notes.index')->with('message', 'Note updated successfully');
+        flash()->success('Your note has been updated.');
+
+        return to_route('notes.index');
     }
 
     /**
@@ -71,6 +75,8 @@ class NoteController extends Controller
     public function destroy(Note $note)
     {
         $note->delete();
+
+        flash()->flash('warning', 'Your note has been deleted.', [], 'Success');
 
         return to_route('notes.index')->with('message', 'Note deleted successfully');
     }

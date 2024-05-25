@@ -34,7 +34,9 @@ class DiseaseController extends Controller
 
         $disease = auth()->user()->diseases()->create($validatedData);
 
-        return to_route('diseases.index')->with('message', 'Disease added successfully');
+        flash()->success('Disease added successfully');
+
+        return to_route('diseases.index');
     }
 
     /**
@@ -62,7 +64,9 @@ class DiseaseController extends Controller
 
         $disease->update($validatedData);
 
-        return to_route('diseases.index')->with('message', 'Disease updated successfully');
+        flash()->success('Disease updated successfully');
+
+        return to_route('diseases.index');
     }
 
     /**
@@ -72,6 +76,8 @@ class DiseaseController extends Controller
     {
         $disease->delete();
 
-        return to_route('diseases.index')->with('message', 'Disease deleted successfully');
+        flash()->flash('warning', 'Disease deleted successfully', [], 'Success');
+
+        return to_route('diseases.index');
     }
 }

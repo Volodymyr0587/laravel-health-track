@@ -43,7 +43,9 @@ class TreatmentController extends Controller
 
         $treatment = Treatment::create($validatedData);
 
-        return to_route('treatments.index')->with('message', 'Treatment created successfully');
+        flash()->success('Your treatment has been created.');
+
+        return to_route('treatments.index');
     }
 
     /**
@@ -75,7 +77,9 @@ class TreatmentController extends Controller
 
         $treatment->update($validatedData);
 
-        return to_route('treatments.index')->with('message', 'Treatment updated successfully');
+        flash()->success('Your treatment has been updated.');
+
+        return to_route('treatments.index');
     }
 
     /**
@@ -85,6 +89,8 @@ class TreatmentController extends Controller
     {
         $treatment->delete();
 
-        return to_route('treatments.index')->with('message', 'Treatment deleted successfully');
+        flash()->flash('warning', 'Your treatment has been deleted.', [], 'Success');
+
+        return to_route('treatments.index');
     }
 }
