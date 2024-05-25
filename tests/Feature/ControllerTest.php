@@ -7,20 +7,27 @@ use App\Models\Event;
 //     $user = User::factory()->create();
 //     $this->actingAs($user);
 
-//     $response = $this->post('/events', [
-//         'user_id' => $user->id,
+//     $response = $this->post(route('events.store'), [
 //         'name' => 'Doctor Visit',
 //         'event_time' => now()->toDateTimeString(),
 //         'description' => 'Check-up',
 //         'price' => '100.00',
 //     ]);
 
-//     $response->assertRedirect('/');
+//     // Output the actual redirect location for debugging
+//     // dd($response->headers->get('Location'));
+
+//     // Verify the response redirects to the events index
+//     $response->assertRedirect(route('events.index'));
+
+//     // Verify the event was created in the database
 //     $this->assertDatabaseHas('events', [
 //         'name' => 'Doctor Visit',
 //         'user_id' => $user->id,
 //     ]);
 // });
+
+
 
 
 // it('can update an event', function () {
