@@ -13,7 +13,7 @@
 
                 <x-forms.select label="Disease" id="disease_id" name="disease_id">
                     @foreach($diseases as $id => $name)
-                    <option value="{{ $id }}">{{ $name }}</option>
+                    <option value="{{ $id }}" {{ old('disease_id') == $id ? 'selected' : '' }}>{{ $name }}</option>
                     @endforeach
                 </x-forms.select>
 
