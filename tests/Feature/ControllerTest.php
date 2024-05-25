@@ -3,19 +3,31 @@
 use App\Models\User;
 use App\Models\Event;
 
-// it('can create an event', function () {
+it('unauthenticated user cannot create an event', function () {
+    $response = $this->post('/events');
+    $response->assertStatus(302);
+});
+
+// it('authenticated user can create an event', function  () {
+//     $response = $this->actingAs(User::factory()->create())->post('/events');
+
+//     $response->assertStatus(200);
+// });
+
+// it('authenticated user can store an event', function () {
 //     $user = User::factory()->create();
-//     $this->actingAs($user);
+//     $response = $this->actingAs($user)
+//         ->post(route('events.store'), [
+//             'name' => 'Doctor Visit',
+//             'event_time' => now()->toDateTimeString(),
+//             'description' => 'Check-up',
+//             'price' => '100.00',
+//         ]);
 
-//     $response = $this->post(route('events.store'), [
-//         'name' => 'Doctor Visit',
-//         'event_time' => now()->toDateTimeString(),
-//         'description' => 'Check-up',
-//         'price' => '100.00',
-//     ]);
-
-//     // Output the actual redirect location for debugging
-//     // dd($response->headers->get('Location'));
+//     // Debugging output
+//     if ($response->status() != 302) {
+//         dd($response->content());
+//     }
 
 //     // Verify the response redirects to the events index
 //     $response->assertRedirect(route('events.index'));
@@ -26,8 +38,6 @@ use App\Models\Event;
 //         'user_id' => $user->id,
 //     ]);
 // });
-
-
 
 
 // it('can update an event', function () {
