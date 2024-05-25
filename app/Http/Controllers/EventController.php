@@ -39,7 +39,9 @@ class EventController extends Controller
             $event->addMedia($request->file('attachment'))->toMediaCollection('attachments');
         }
 
-        return to_route('events.index')->with('message', 'Event created successfully');
+        flash()->success('Your event has been created.');
+
+        return to_route('events.index');
 
     }
 
@@ -81,6 +83,8 @@ class EventController extends Controller
 
         $event->update($validatedData);
 
+        flash()->success('Your event has been updated.');
+
         return to_route('events.index')->with('message', 'Event updated successfully');
     }
 
@@ -90,6 +94,8 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         $event->delete();
+
+        flash()->flash('warning', 'Your event has been deleted.', [], 'Success');
 
         return to_route('events.index')->with('message', 'Event deleted successfully');
     }
