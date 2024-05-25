@@ -79,7 +79,7 @@ class TreatmentController extends Controller
 
         flash()->success('Your treatment has been updated.');
 
-        return to_route('treatments.index');
+        return to_route('treatments.show', $treatment->id);
     }
 
     /**
