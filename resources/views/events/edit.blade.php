@@ -34,7 +34,7 @@
                     @csrf
                     @method('DELETE')
                     <x-forms.button type="submit" like="button"
-                        onclick="return confirm('{{ __('Are you sure you want to delete the record?') }}')"
+                        onclick="return confirm('{{ __('Are you sure you want to delete the record?') }} {{ __('All files associated with the event will also be deleted.') }}')"
                         class="bg-red-600 hover:bg-red-500 dark:bg-red-600 dark:hover:bg-red-500">
                         {{ __("Delete") }}
                     </x-forms.button>
