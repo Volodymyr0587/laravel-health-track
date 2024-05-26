@@ -8,11 +8,16 @@ it('unauthenticated user cannot create an event', function () {
     $response->assertStatus(302);
 });
 
-// it('authenticated user can create an event', function  () {
-//     $response = $this->actingAs(User::factory()->create())->post('/events');
+it('authenticated user can visit create event page', function () {
+    $user = User::factory()->create();
+    $this->actingAs($user);
 
-//     $response->assertStatus(200);
-// });
+    // Attempt to visit the create event page
+    $response = $this->get('/events/create');
+
+    // Check if the page loads successfully
+    $response->assertStatus(200);
+});
 
 // it('authenticated user can store an event', function () {
 //     $user = User::factory()->create();
@@ -30,7 +35,7 @@ it('unauthenticated user cannot create an event', function () {
 //     }
 
 //     // Verify the response redirects to the events index
-//     $response->assertRedirect(route('events.index'));
+//     $response->assertRedirect('/events');
 
 //     // Verify the event was created in the database
 //     $this->assertDatabaseHas('events', [
