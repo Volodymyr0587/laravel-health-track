@@ -15,6 +15,9 @@
                 <x-forms.input label="Event location" name="location" placeholder="{{ __('Volyn Regional Clinical Hospital, ave. Presidenta Hrushevskyi, 21 Lutsk') }}" />
                 <x-forms.input label="Event date and time" name="event_time" type="datetime-local" />
                 <x-forms.textarea label="Event description" name="description"  />
+                <p class="text-gray-600 dark:text-gray-400">
+                    {{ __('Characters entered:') }} <span id="charCount">0</span> {{ __('Limit: 1000') }}
+                </p>
                 <x-forms.input label="Event price (if free, leave the field empty)" name="price" placeholder="750.00" />
                 <x-forms.input class="text-gray-500" label="File upload (Referral to a doctor, etc)" name="attachment" type="file" />
 
@@ -27,5 +30,24 @@
             </x-forms.form>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputField = document.getElementById('description');
+            const charCountDisplay = document.getElementById('charCount');
+
+            inputField.addEventListener('input', function () {
+                const charCount = inputField.value.length;
+                charCountDisplay.textContent = charCount;
+
+                // Change color if charCount exceeds 1000
+                if (charCount > 1000) {
+                    charCountDisplay.classList.add('text-red-500');
+                } else {
+                    charCountDisplay.classList.remove('text-red-500');
+                }
+            });
+        });
+    </script>
 
 </x-layout>
