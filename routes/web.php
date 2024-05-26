@@ -37,7 +37,7 @@ Route::middleware('auth')->name('events.')->group(function () {
     Route::get('/events', [EventController::class, 'index'])->name('index');
     Route::get('/events/create', [EventController::class, 'create'])->name('create');
     Route::post('/events', [EventController::class, 'store'])->name('store');
-    Route::get('/events/{event}', [EventController::class, 'show'])->name('show');
+    Route::get('/events/{event}', [EventController::class, 'show'])->can('edit', 'event')->name('show');
     Route::get('/events/{event}/edit', [EventController::class, 'edit'])->can('edit', 'event')->name('edit');
     Route::patch('/events/{event}', [EventController::class, 'update'])->can('edit', 'event')->name('update');
     Route::get('/events/download-attachment/{event}/{media}', [EventController::class, 'downloadAttachment'])
@@ -60,7 +60,7 @@ Route::middleware('auth')->name('notes.')->group(function () {
     Route::get('/notes', [NoteController::class, 'index'])->name('index');
     Route::get('/notes/create', [NoteController::class, 'create'])->name('create');
     Route::post('/notes', [NoteController::class, 'store'])->name('store');
-    Route::get('/notes/{note}', [NoteController::class, 'show'])->name('show');
+    Route::get('/notes/{note}', [NoteController::class, 'show'])->can('editNote', 'note')->name('show');
     Route::get('/notes/{note}/edit', [NoteController::class, 'edit'])->can('editNote', 'note')->name('edit');
     Route::patch('/notes/{note}', [NoteController::class, 'update'])->can('editNote', 'note')->name('update');
     Route::delete('/notes/{note}', [NoteController::class, 'destroy'])->can('editNote', 'note')->name('destroy');
@@ -72,7 +72,7 @@ Route::middleware('auth')->name('diseases.')->group(function () {
     Route::get('/diseases', [DiseaseController::class, 'index'])->name('index');
     Route::get('/diseases/create', [DiseaseController::class, 'create'])->name('create');
     Route::post('/diseases', [DiseaseController::class, 'store'])->name('store');
-    Route::get('/diseases/{disease}', [DiseaseController::class, 'show'])->name('show');
+    Route::get('/diseases/{disease}', [DiseaseController::class, 'show'])->can('editDisease', 'disease')->name('show');
     Route::get('/diseases/{disease}/edit', [DiseaseController::class, 'edit'])->can('editDisease', 'disease')->name('edit');
     Route::patch('/diseases/{disease}', [DiseaseController::class, 'update'])->can('editDisease', 'disease')->name('update');
     Route::delete('/diseases/{disease}', [DiseaseController::class, 'destroy'])->can('editDisease', 'disease')->name('destroy');
@@ -84,7 +84,7 @@ Route::middleware('auth')->name('treatments.')->group(function () {
     Route::get('/treatments', [TreatmentController::class, 'index'])->name('index');
     Route::get('/treatments/create', [TreatmentController::class, 'create'])->name('create');
     Route::post('/treatments', [TreatmentController::class, 'store'])->name('store');
-    Route::get('/treatments/{treatment}', [TreatmentController::class, 'show'])->name('show');
+    Route::get('/treatments/{treatment}', [TreatmentController::class, 'show'])->can('editTreatment', 'treatment')->name('show');
     Route::get('/treatments/{treatment}/edit', [TreatmentController::class, 'edit'])->can('editTreatment', 'treatment')->name('edit');
     Route::patch('/treatments/{treatment}', [TreatmentController::class, 'update'])->can('editTreatment', 'treatment')->name('update');
     Route::delete('/treatments/{treatment}', [TreatmentController::class, 'destroy'])->can('editTreatment', 'treatment')->name('destroy');
