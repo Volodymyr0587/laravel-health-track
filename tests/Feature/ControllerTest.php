@@ -106,3 +106,45 @@ it('can delete an event', function () {
     $response->assertRedirect('/events');
     $this->assertDatabaseMissing('events', ['id' => $event->id]);
 });
+
+it('unauthenticated user cannot store an event', function () {
+    // Prepare request data
+    $eventData = [
+        'name' => 'Sample Event',
+        'location' => 'Hospital',
+        'event_time' => '2024-06-01 11:46:00',
+        'description' => 'This is a description of the sample event.',
+    ];
+
+    // Send a POST request to store the event
+    $response = $this->post(route('events.store'), $eventData);
+
+    // Assert that the event was not created in the database
+    $this->assertDatabaseMissing('events', [
+        'name' => 'Sample Event',
+    ]);
+
+    // Assert that the user is redirected to the login page
+    $response->assertRedirect(route('login'));
+});
+
+it('authenticated user can view an event', function () {
+    // Create a user
+    $user = User::factory()->create();
+
+    // Create an event
+    $event = Event::factory()->create([
+        'user_id' => $user->id,
+    ]);
+
+    // Authenticate the user
+    $this->actingAs($user);
+
+    // Send a GET request to view the event
+    $response = $this->get(route('events.show', $event->id));
+
+    // Assert that the event is visible
+    $response->assertStatus(200);
+    $response->assertViewIs('events.show');
+    $response->assertSee($event->name);
+});
