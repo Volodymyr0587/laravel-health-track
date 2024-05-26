@@ -19,53 +19,81 @@ it('authenticated user can visit create event page', function () {
     $response->assertStatus(200);
 });
 
-// it('authenticated user can store an event', function () {
-//     $user = User::factory()->create();
-//     $response = $this->actingAs($user)
-//         ->post(route('events.store'), [
-//             'name' => 'Doctor Visit',
-//             'event_time' => now()->toDateTimeString(),
-//             'description' => 'Check-up',
-//             'price' => '100.00',
-//         ]);
 
-//     // Debugging output
-//     if ($response->status() != 302) {
-//         dd($response->content());
-//     }
+it('authenticated user can store an event', function () {
+    // Create a user
+    $user = User::factory()->create();
 
-//     // Verify the response redirects to the events index
-//     $response->assertRedirect('/events');
+    // Authenticate the user
+    $this->actingAs($user);
 
-//     // Verify the event was created in the database
-//     $this->assertDatabaseHas('events', [
-//         'name' => 'Doctor Visit',
-//         'user_id' => $user->id,
-//     ]);
-// });
+    // Prepare request data
+    $eventData = [
+        'name' => 'Sample Event',
+        'location' => 'Hospital',
+        'event_time' => '2006-04-16 11:46:00',
+        'description' => 'This is a description of the sample event.',
+        // Add other necessary fields here
+    ];
+
+    // Send a POST request to store the event
+    $response = $this->post(route('events.store'), $eventData);
+
+    // Assert that the event was created
+    $this->assertDatabaseHas('events', [
+        'user_id' => $user->id,
+        'name' => 'Sample Event',
+        'location' => 'Hospital',
+        'event_time' => '2006-04-16 11:46:00',
+        'description' => 'This is a description of the sample event.',
+    ]);
+
+    // Assert redirection to the events index page
+    $response->assertRedirect(route('events.index'));
+});
 
 
-// it('can update an event', function () {
-//     $user = User::factory()->create();
-//     $event = Event::factory()->for($user)->create([
-//         'name' => 'Doctor Visit',
-//     ]);
+it('authenticated user can update an event', function () {
+    // Create a user
+    $user = User::factory()->create();
 
-//     $this->actingAs($user);
+    // Create an event
+    $event = Event::factory()->create([
+        'user_id' => $user->id,
+        'name' => 'Original Event',
+        'location' => 'Original Location',
+        'event_time' => '2024-06-01 10:00:00',
+        'description' => 'Original description.',
+    ]);
 
-//     $response = $this->put("/events/{$event->id}", [
-//         'name' => 'Updated Visit',
-//         'event_time' => now(),
-//         'description' => 'Follow-up',
-//         'price' => '150.00',
-//     ]);
+    // Authenticate the user
+    $this->actingAs($user);
 
-//     $response->assertRedirect('/events');
-//     $this->assertDatabaseHas('events', [
-//         'id' => $event->id,
-//         'name' => 'Updated Visit',
-//     ]);
-// });
+    // Prepare request data for updating the event
+    $updateData = [
+        'name' => 'Updated Event',
+        'location' => 'Updated Location',
+        'event_time' => '2024-06-01 12:00:00',
+        'description' => 'Updated description.',
+        // Add other necessary fields here
+    ];
+
+    // Send a PATCH request to update the event
+    $response = $this->patch(route('events.update', $event->id), $updateData);
+
+    // Assert that the event was updated in the database
+    $this->assertDatabaseHas('events', [
+        'id' => $event->id,
+        'user_id' => $user->id,
+        'name' => 'Updated Event',
+        'location' => 'Updated Location',
+        'event_time' => '2024-06-01 12:00:00',
+        'description' => 'Updated description.',
+    ]);
+
+    // Assert redirection to the event's show page
+    $response->assertRedirect(route('events.show', $event->id));
+});
 
 it('can delete an event', function () {
     $user = User::factory()->create();
