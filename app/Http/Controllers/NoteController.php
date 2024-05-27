@@ -66,7 +66,7 @@ class NoteController extends Controller
 
         flash()->success('Your note has been updated.');
 
-        return to_route('notes.show', $note->id);
+        return to_route('notes.show', $note->slug);
     }
 
     /**

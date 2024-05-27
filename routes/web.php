@@ -60,8 +60,8 @@ Route::middleware('auth')->name('notes.')->group(function () {
     Route::get('/notes', [NoteController::class, 'index'])->name('index');
     Route::get('/notes/create', [NoteController::class, 'create'])->name('create');
     Route::post('/notes', [NoteController::class, 'store'])->name('store');
-    Route::get('/notes/{note}', [NoteController::class, 'show'])->can('editNote', 'note')->name('show');
-    Route::get('/notes/{note}/edit', [NoteController::class, 'edit'])->can('editNote', 'note')->name('edit');
+    Route::get('/notes/{note:slug}', [NoteController::class, 'show'])->can('editNote', 'note')->name('show');
+    Route::get('/notes/{note:slug}/edit', [NoteController::class, 'edit'])->can('editNote', 'note')->name('edit');
     Route::patch('/notes/{note}', [NoteController::class, 'update'])->can('editNote', 'note')->name('update');
     Route::delete('/notes/{note}', [NoteController::class, 'destroy'])->can('editNote', 'note')->name('destroy');
 });
