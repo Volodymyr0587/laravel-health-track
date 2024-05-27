@@ -157,6 +157,14 @@
         </section>
         <!-- END FEATURE -->
 
+         <!-- SLIDER -->
+         <section class="bg-white text-gray-900 dark:bg-healthtrack-dark dark:text-white">
+            <div class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto">
+                <x-carousel />
+            </div>
+        </section>
+        <!-- END SLIDER -->
+
         <!-- CTA -->
         <section class="bg-white text-gray-900 dark:bg-healthtrack-dark dark:text-white">
             <div
