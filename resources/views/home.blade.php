@@ -165,6 +165,76 @@
         </section>
         <!-- END SLIDER -->
 
+        <!-- Q&A -->
+        <section class="bg-white text-gray-900 dark:bg-healthtrack-dark dark:text-white">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{{ __("Frequently asked questions") }}</h2>
+                <div class="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-cols-2">
+                    <div>
+                        <div class="mb-10">
+                            <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                                <x-svg.qa />
+                                {{ __("How is my data protected?") }}
+                            </h3>
+                            <p class="text-gray-500 dark:text-gray-400">{{ __("Your data is protected using modern encryption technologies and multi-level authentication. We take all necessary measures to ensure the privacy and security of your personal information.") }}</p>
+                        </div>
+                        <div class="mb-10">
+                            <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                                <x-svg.qa />
+                                {{ __("Can I receive medication reminders?") }}
+                            </h3>
+                            <p class="text-gray-500 dark:text-gray-400">{{ __("Yes, our web application allows you to set medication reminders. You can specify the time, dosage and frequency of administration, and the system will automatically remind you of this.") }}</p>
+                        </div>
+                        <div class="mb-10">
+                            <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                                <x-svg.qa />
+                                {{ __("Can I keep prescriptions and medical records?") }}
+                            </h3>
+                            <p class="text-gray-500 dark:text-gray-400">{{ __("Yes, our application allows you to store prescriptions, medical documents and other important files. You can upload documents in PDF, JPEG, PNG and other formats, saving them to your profile.") }}</p>
+                        </div>
+                        <div class="mb-10">
+                            <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                                <x-svg.qa />
+                                {{ __("Is the app available on mobile devices?") }}
+                            </h3>
+                            <p class="text-gray-500 dark:text-gray-400">{{ __("Yes, our web application is available on all mobile devices, including smartphones and tablets. You can use it through a web browser or download our mobile version from the relevant app store.") }}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-10">
+                            <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                                <x-svg.qa />
+                                {{ __("How to add a new visit to the doctor?") }}
+                            </h3>
+                            <p class="text-gray-500 dark:text-gray-400">{{ __("To add a new visit, go to the \"Health events\" section and click the \"Create Event\" button. Fill in the required information, including the date, time, and save the entry.") }}</p>
+                        </div>
+                        <div class="mb-10">
+                            <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                                <x-svg.qa />
+                                {{ __("How to manage medical expenses?") }}
+                            </h3>
+                            <p class="text-gray-500 dark:text-gray-400">{{ __("Our app allows you to track your medical expenses by keeping track of the cost of doctor visits, medications, and medical procedures, which will help you plan your budget easily.") }}</p>
+                        </div>
+                        <div class="mb-10">
+                            <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                                <x-svg.qa />
+                                {{ __("Is it possible to keep records of my treatment?") }}
+                            </h3>
+                            <p class="text-gray-500 dark:text-gray-400">{{ __("Yes, you can keep detailed records of your treatment, including a description of the treatment process, prescribed medications, etc. This will help you organize information and always have access to it.") }}</p>
+                        </div>
+                        <div class="mb-10">
+                            <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                                <x-svg.qa />
+                                {{ __("How to contact the support team?") }}
+                            </h3>
+                            <p class="text-gray-500 dark:text-gray-400">{{ __("You can contact our support team through the Contact section. We are available by phone, e-mail and through the feedback form on the website. Our team is ready to help you with any questions or concerns.") }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+        <!-- END Q&A -->
+
         <!-- CTA -->
         <section class="bg-white text-gray-900 dark:bg-healthtrack-dark dark:text-white">
             <div
