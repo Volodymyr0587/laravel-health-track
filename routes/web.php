@@ -42,6 +42,7 @@ Route::middleware('auth')->name('events.')->group(function () {
     Route::patch('/events/{event}', [EventController::class, 'update'])->can('edit', 'event')->name('update');
     Route::get('/events/download-attachment/{event}/{media}', [EventController::class, 'downloadAttachment'])
         ->can('edit', 'event')->name('downloadAttachment');
+    Route::post('/events/{event}/email', [EventController::class, 'email'])->can('edit', 'event')->name('email');
     Route::delete('/events/{event}', [EventController::class, 'destroy'])->can('edit', 'event')->name('destroy');
 });
 

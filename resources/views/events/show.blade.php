@@ -26,6 +26,14 @@
                                 </x-forms.button>
                             </x-event.info>
                         @endforeach
+                        <div class="sm:col-span-5 -mt-8 -mb-8">
+                            <x-forms.form action="{{ route('events.email', $event) }}" method="POST">
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+                                    <x-forms.input type="email" label="You email" name="userEmail" placeholder="example@mail.com" />
+                                    <x-forms.button type="submit" like="button" class="mt-7">{{ __("Get Details") }}</x-forms.button>
+                                </div>
+                            </x-forms.form>
+                        </div>
                     </div>
                 </div>
             </div>

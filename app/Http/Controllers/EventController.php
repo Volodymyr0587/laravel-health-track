@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Mail\EventDetails;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -84,6 +87,21 @@ class EventController extends Controller
         $event->update($validatedData);
 
         flash()->success('Your event has been updated.');
+
+        return to_route('events.show', $event->id);
+    }
+
+    /**
+     * Send details of event to user email
+     */
+    public function email(Request $request, Event $event)
+    {
+        $request->validate([
+            'userEmail' => 'required|email',
+        ]);
+
+        // Send the email
+        Mail::to($request->userEmail)->send(new EventDetails($event));
 
         return to_route('events.show', $event->id);
     }
