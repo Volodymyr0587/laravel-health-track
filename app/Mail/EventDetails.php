@@ -42,6 +42,7 @@ class EventDetails extends Mailable
         return new Content(
             view: 'emails.event-details',
             with: [
+                'userName' => $this->event->user->first_name . ' ' . $this->event->user->last_name,
                 'eventName' => $this->event->name,
                 'eventLocation' => $this->event->location,
                 'eventTime' => $this->event->event_time,
