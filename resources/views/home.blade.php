@@ -283,11 +283,11 @@
                     </div>
                     <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{{ __("Resources") }}
                             </h2>
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li class="mb-4">
-                                    <a href="#" class="hover:underline">Blog</a>
+                                    <a href="#" class="hover:underline">{{ __("Blog") }}</a>
                                 </li>
                                 <li>
                                     <a href="#" class="hover:underline">YouTube</a>
@@ -295,7 +295,7 @@
                             </ul>
                         </div>
                         <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{{ __("Follow us") }}
                             </h2>
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li class="mb-4">
@@ -307,13 +307,13 @@
                             </ul>
                         </div>
                         <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{{ __("Legal") }}</h2>
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li class="mb-4">
-                                    <a href="#" class="hover:underline">Privacy Policy</a>
+                                    <a href="#" class="hover:underline">{{ __("Privacy Policy") }}</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                                    <a href="#" class="hover:underline">{{ __("Terms") }} &amp; {{ __("Conditions") }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -322,7 +322,7 @@
                 <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                 <div class="sm:flex sm:items-center sm:justify-between">
                     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {{ date('Y') }} <a
-                            href="/" class="hover:underline">HealthTrack™</a>. All Rights Reserved.
+                            href="/" class="hover:underline">HealthTrack™</a>. {{ __("All Rights Reserved.") }}
                     </span>
                     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                         <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
