@@ -37,7 +37,7 @@
                     class="flex flex-col mb-8 space-y-4 lg:mb-16 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                     <a href="{{ route('register') }}"
                         class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-healthtrack-light hover:bg-healthtrack-light-hover dark:bg-healthtrack-button-dark dark:hover:healthtrack-button-dark-hover">
-                        Get started
+                        {{ __("Get started") }}
                         <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -49,7 +49,7 @@
                 @endguest
 
                 <div class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
-                    <span class="font-semibold text-gray-400 uppercase">FEATURED IN</span>
+                    <span class="font-semibold text-gray-400 uppercase">{{ __("FEATURED IN") }}</span>
                     <div class="flex flex-wrap items-center justify-center mt-8 text-gray-500 sm:justify-between">
                         <a href="#" class="mb-5 mr-8 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400">
                             <x-svg.youtube />
@@ -256,7 +256,7 @@
                     @guest
                     <a href="{{ route('register') }}"
                         class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-healthtrack-light hover:bg-healthtrack-light-hover dark:bg-healthtrack-button-dark dark:hover:healthtrack-button-dark-hover">
-                        Get started
+                        {{ __("Get started") }}
                         <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
