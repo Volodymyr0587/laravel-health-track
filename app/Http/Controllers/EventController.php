@@ -103,6 +103,8 @@ class EventController extends Controller
         // Send the email
         Mail::to($request->userEmail)->send(new EventDetails($event));
 
+        flash()->success("Details of your event have been sent to {$request->userEmail}");
+
         return to_route('events.show', $event->id);
     }
 
