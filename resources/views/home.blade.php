@@ -100,7 +100,7 @@
                 <div class="max-w-screen-md mb-8 lg:mb-16">
                     <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">{{ __("Why choose us") }}</h2>
                     <p class="text-gray-500 sm:text-xl dark:text-gray-400">
-                        {{ __("Our web app offers numerous benefits that make managing your health easy and efficient:") }}
+                        {{ __("Our web app offers numerous benefits that make managing your health easy and efficient") }}:
                     </p>
                 </div>
                 <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">

@@ -93,6 +93,7 @@
     "Your note has been updated.": "Вашу нотатку оновлено.",
     "Your note has been deleted.": "Вашу нотатку видалено.",
 
+
     "News": "Новини",
     "Visit our blog page!": "Відвідайте сторінку нашого блогу!",
     "Welcome to Health Track - Your personal health assistant": "Ласкаво просимо до Health Track - вашого персонального помічника зі здоров'я",
@@ -109,5 +110,21 @@
     "Medications. ": "Ліки. ",
     "Create a medication schedule and get notifications.": "Створіть розклад прийому ліків та отримуйте сповіщення.",
     "And much more": "І багато іншого",
-    "Your health is in good hands.": "Ваше здоров'я в надійних руках."
+    "Your health is in good hands.": "Ваше здоров'я в надійних руках.",
+
+
+    "Why choose us": "Чому обирають нас",
+    "Our web app offers numerous benefits that make managing your health easy and efficient": "Наш веб-додаток пропонує безліч переваг, які роблять керування вашим здоров'ям простим та ефективним",
+    "Intuitive interface": "Інтуїтивний інтерфейс",
+    "Our web-based application has a simple and easy-to-use interface that requires no special skills. Even new users will quickly get up to speed and be able to manage their medical records efficiently": "Наш веб-додаток має простий і зручний інтерфейс, що не вимагає спеціальних навичок. Навіть нові користувачі швидко ввійдуть в курс справи та зможуть ефективно керувати своїми медичними записами",
+    "Data security": "Безпека даних",
+    "Your medical records are securely protected with state-of-the-art encryption technology. We ensure that your personal information remains confidential and is accessible only to you.": "Ваша медична документація надійно захищена найсучаснішими технологіями шифрування. Ми гарантуємо, що ваша особиста інформація залишається конфіденційною і доступна лише вам.",
+    "Mobility": "Мобільність",
+    "Our app is available on all devices - computers, tablets and smartphones. This allows you to access important medical information anytime and anywhere.": "Наш додаток доступний на всіх пристроях - комп'ютерах, планшетах і смартфонах. Це дозволяє отримати доступ до важливої медичної інформації в будь-який час і в будь-якому місці.",
+    "Personalization": "Персоналізація",
+    "You can customize our app to suit your needs by adding reminders, personalized notes, and adjusting settings. This allows you to create a convenient and individualized approach to managing your health.": "Ви можете налаштувати додаток відповідно до своїх потреб, додаючи нагадування, нотатки та змінюючи налаштування. Це дозволяє створити зручний та індивідуальний підхід до управління своїм здоров'ям.",
+    "User support": "Підтримка користувачів",
+    "Our support team is always ready to help you with any questions or concerns. We provide round-the-clock support through various communication channels so you can always count on us.": "Наша команда підтримки завжди готова допомогти вам з будь-якими питаннями чи проблемами. Ми надаємо цілодобову підтримку через різні канали зв'язку, тому ви завжди можете на нас розраховувати.",
+    "Regular updates": "Регулярні оновлення",
+    "We are constantly working to improve our web app by introducing new features and improvements. With regular updates, you always get the best tool for managing your health.": "Ми постійно працюємо над вдосконаленням нашого веб-додатку, додаючи нові функції та покращення. Завдяки регулярним оновленням ви завжди отримуєте найкращий інструмент для управління своїм здоров'ям."
 }
