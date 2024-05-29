@@ -21,6 +21,7 @@
                 @foreach ($treatments as $treatment)
 
                 <x-treatment.item treatmentRoute="{{ route('treatments.show', $treatment) }}" treatmentName="{{ $treatment->name }}"
+                    treatmentPrice="{{ $treatment->price }}"
                     treatmentUpdatedAt="{{ $treatment->updated_at->diffForHumans() }}" />
 
                 @endforeach

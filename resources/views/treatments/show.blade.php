@@ -17,6 +17,7 @@
                         <x-treatment.info label-name="{{ __('Treatment name') }}" treatment-field="{{ $treatment->name }}" />
                         <x-treatment.info label-name="{{ __('Treatment for') }}" treatment-field="{{ $treatment->disease->name }}" />
                         <x-treatment.info label-name="{{ __('Treatment description') }}" treatment-field="{{ $treatment->description }}" />
+                        <x-treatment.info label-name="{{ __('Treatment price') }}" treatment-field="{{ $treatment->price }}" />
 
                     </div>
                 </div>

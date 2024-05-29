@@ -1,7 +1,7 @@
 <x-layout>
 
     <x-slot:heading>
-        {{ __("Edit Tretment") }}
+        {{ __("Edit Treatment") }}
     </x-slot:heading>
 
     <div class="p-4 sm:ml-64">
@@ -12,7 +12,7 @@
             <x-forms.form action="{{ route('treatments.update', $treatment) }}" method="POST">
                 @method('PATCH')
 
-                <x-forms.select label="Disease" id="disease_id" name="disease_id">
+                <x-forms.select label="{{ __('Disease') }}" id="disease_id" name="disease_id">
                     @foreach($diseases as $id => $name)
                     {{-- <option value="{{ $id }}">{{ $name }}</option> --}}
                     <option value="{{ $id }}" {{ $id == $treatment->disease_id ? 'selected' : '' }}>
@@ -23,7 +23,7 @@
 
                 <x-forms.input label="{{ __('Treatment name') }}" name="name" value="{{ $treatment->name }}" />
                 <x-forms.textarea label="{{ __('Treatment description') }}" name="description" value="{{ $treatment->description }}" />
-                <x-forms.input label="Treatment price (if free, leave the field empty)" name="price" value="{{ $treatment->price }}" />
+                <x-forms.input label="{{ __('Treatment price (if free, leave the field empty)') }}" name="price" value="{{ $treatment->price }}" />
 
                 <div class="flex space-x-2">
                     <x-forms.button url="{{ route('treatments.show', $treatment) }}" like="link">{{ __("Cancel") }}</x-forms.button>

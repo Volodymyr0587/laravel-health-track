@@ -40,10 +40,24 @@
     "Disease name": "Назва захворювання",
     "Disease description": "Опис захворювання",
     "Back to Diseases": "Назад до захворювань",
-    "Edit Disease": "Редагувати Захворювання",
+    "Edit Disease": "Редагувати захворювання",
     "Here you can edit a disease details": "Тут ви можете відредагувати інформацію про захворювання",
 
-
+    "Here you can view, search your treatment. Or press the button 'Create treatment' to go to the form.": "Тут ви можете переглянути, знайти своє лікування. Або натисніть кнопку «Створити лікування», щоб перейти до форми.",
+    "Create Treatment": "Створити лікування",
+    "Here you can create a treatment for specific disease": "Тут ви можете створити лікування для конкретного захворювання",
+    "Search For Treatment": "Пошук лікування",
+    "Find a specific treatment": "Знайдіть конкретне лікування",
+    "Here you can see the details of your treatment": "Тут ви можете побачити деталі вашого лікування",
+    "Treatment name": "Назва лікування",
+    "Treatment for": "Лікування від",
+    "Treatment description": "Опис лікування",
+    "Treatment price": "Вартість лікування",
+    "Back to Treatments": "Назад до лікування",
+    "Edit Treatment": "Редагувати лікування",
+    "Here you can edit a treatment details": "Тут ви можете відредагувати деталі лікування",
+    "Disease": "Захворювання",
+    "Treatment price (if free, leave the field empty)": "Вартість лікування (якщо безплатно, залиште поле порожнім)",
 
     "Here you can view all your files (attachments for health events)": "Тут ви можете переглянути всі свої файли (вкладення для подій здоров'я)",
     "Here you can view, search an events (visit to the doctor, routine examination, tests, etc.). Or press the button 'Create Event' to go to the form.":
