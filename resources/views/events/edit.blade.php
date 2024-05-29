@@ -20,7 +20,7 @@
                 <x-forms.input class="text-gray-500" label="File upload (Referral to a doctor, etc)" name="attachment" type="file" value="{{ $event->attachment }}" />
 
                 <div class="flex space-x-2">
-                    <x-forms.button url="{{ route('events.show', $event) }}" like="link">{{ __("Cancel") }}</x-forms.button>
+                    <x-forms.button url="{{ route('events.show', $event) }}" like="cancel">{{ __("Cancel") }}</x-forms.button>
                     @can('edit', $event)
                     <x-forms.button type="submit" like="button">{{ __("Update") }}</x-forms.button>
                     @endcan

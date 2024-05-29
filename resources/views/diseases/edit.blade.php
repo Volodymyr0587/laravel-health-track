@@ -16,7 +16,7 @@
                 <x-forms.textarea label="{{ __('Disease description') }}" name="description" value="{{ $disease->description }}" />
 
                 <div class="flex space-x-2">
-                    <x-forms.button url="{{ route('diseases.show', $disease) }}" like="link">{{ __("Cancel") }}</x-forms.button>
+                    <x-forms.button url="{{ route('diseases.show', $disease) }}" like="cancel">{{ __("Cancel") }}</x-forms.button>
                     @can('editDisease', $disease)
                     <x-forms.button type="submit" like="button">{{ __("Update") }}</x-forms.button>
                     @endcan

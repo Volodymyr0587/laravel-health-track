@@ -26,7 +26,7 @@
                 <x-forms.input label="{{ __('Treatment price (if free, leave the field empty)') }}" name="price" value="{{ $treatment->price }}" />
 
                 <div class="flex space-x-2">
-                    <x-forms.button url="{{ route('treatments.show', $treatment) }}" like="link">{{ __("Cancel") }}</x-forms.button>
+                    <x-forms.button url="{{ route('treatments.show', $treatment) }}" like="cancel">{{ __("Cancel") }}</x-forms.button>
                     @can('editTreatment', $treatment)
                     <x-forms.button type="submit" like="button">{{ __("Update") }}</x-forms.button>
                     @endcan

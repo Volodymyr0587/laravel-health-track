@@ -22,7 +22,7 @@
                 <x-forms.input class="text-gray-500" label="File upload (Referral to a doctor, etc)" name="attachment" type="file" />
 
                 <div class="flex space-x-2">
-                    <x-forms.button url="{{ route('events.index') }}" like="link">{{ __("Cancel") }}</x-forms.button>
+                    <x-forms.button url="{{ route('events.index') }}" like="cancel">{{ __("Cancel") }}</x-forms.button>
                     @auth
                     <x-forms.button type="submit" like="button">{{ __("Create") }}</x-forms.button>
                     @endauth

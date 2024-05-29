@@ -25,7 +25,7 @@
                 <x-forms.input label="Treatment price (if free, leave the field empty)" name="price" placeholder="750.00" />
 
                 <div class="flex space-x-2">
-                    <x-forms.button url="{{ route('treatments.index') }}" like="link">{{ __("Cancel") }}
+                    <x-forms.button url="{{ route('treatments.index') }}" like="cancel">{{ __("Cancel") }}
                     </x-forms.button>
                     @auth
                     <x-forms.button type="submit" like="button">{{ __("Create") }}</x-forms.button>

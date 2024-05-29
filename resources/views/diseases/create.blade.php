@@ -16,7 +16,7 @@
                 <x-forms.textarea label="{{ __('Disease description') }}" name="description"  />
 
                 <div class="flex space-x-2">
-                    <x-forms.button url="{{ route('notes.index') }}" like="link">{{ __("Cancel") }}</x-forms.button>
+                    <x-forms.button url="{{ route('diseases.index') }}" like="cancel">{{ __("Cancel") }}</x-forms.button>
                     @auth
                     <x-forms.button type="submit" like="button">{{ __("Create") }}</x-forms.button>
                     @endauth

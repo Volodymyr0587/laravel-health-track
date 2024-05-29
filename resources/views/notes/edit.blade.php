@@ -16,7 +16,7 @@
                 <x-forms.textarea label="{{ __('Note content') }}" name="body" value="{{ $note->body }}" />
 
                 <div class="flex space-x-2">
-                    <x-forms.button url="{{ route('notes.show', $note) }}" like="link">{{ __("Cancel") }}</x-forms.button>
+                    <x-forms.button url="{{ route('notes.show', $note) }}" like="cancel">{{ __("Cancel") }}</x-forms.button>
                     @can('editNote', $note)
                     <x-forms.button type="submit" like="button">{{ __("Update") }}</x-forms.button>
                     @endcan
