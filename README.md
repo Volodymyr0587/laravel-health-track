@@ -24,3 +24,4 @@ Register new user.
 
 To receive event information by email, specify the mail server credentials in the ```.env``` file. 
 By default, messages will be written to ```storage/logs/laravel.log```
+Also run the ```php artisan queue:work``` command to send emails asynchronously in the background.

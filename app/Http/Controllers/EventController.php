@@ -101,7 +101,10 @@ class EventController extends Controller
         ]);
 
         // Send the email
-        Mail::to($request->userEmail)->send(new EventDetails($event));
+        // Mail::to($request->userEmail)->send(new EventDetails($event));
+
+        // Send the email with queue
+        Mail::to($request->userEmail)->queue(new EventDetails($event));
 
         flash()->success("Details of your event have been sent to {$request->userEmail}");
 
