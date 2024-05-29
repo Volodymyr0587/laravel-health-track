@@ -23,15 +23,13 @@
                 </div>
             </div>
 
-            <div class="sm:col-span-5">
-                <div class="mt-4 space-x-2">
-                    <x-forms.button url="{{ route('treatments.index') }}" like="link">{{ __("Back to Treatments") }}</x-forms.button>
+            <x-back-edit-buttons>
+                <x-forms.button url="{{ route('treatments.index') }}" like="link">{{ __("Back to Treatments") }}</x-forms.button>
 
-                    @can('editTreatment', $treatment)
-                    <x-forms.button url="{{ route('treatments.edit', $treatment) }}" like="link">{{ __("Edit") }}</x-forms.button>
-                    @endcan
-                </div>
-            </div>
+                @can('editTreatment', $treatment)
+                <x-forms.button url="{{ route('treatments.edit', $treatment) }}" like="link">{{ __("Edit") }}</x-forms.button>
+                @endcan
+            </x-back-edit-buttons>
         </div>
     </div>
 

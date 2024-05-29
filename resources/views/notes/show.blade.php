@@ -22,15 +22,13 @@
                 </div>
             </div>
 
-            <div class="sm:col-span-5">
-                <div class="mt-4 space-x-2">
-                    <x-forms.button url="{{ route('notes.index') }}" like="link">{{ __("Back to Notes") }}</x-forms.button>
+            <x-back-edit-buttons>
+                <x-forms.button url="{{ route('notes.index') }}" like="link">{{ __("Back to Notes") }}</x-forms.button>
 
-                    @can('editNote', $note)
-                    <x-forms.button url="{{ route('notes.edit', $note) }}" like="link">{{ __("Edit") }}</x-forms.button>
-                    @endcan
-                </div>
-            </div>
+                @can('editNote', $note)
+                <x-forms.button url="{{ route('notes.edit', $note) }}" like="link">{{ __("Edit") }}</x-forms.button>
+                @endcan
+            </x-back-edit-buttons>
         </div>
     </div>
 
