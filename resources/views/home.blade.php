@@ -54,7 +54,7 @@
                         <a href="#" class="mb-5 mr-8 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400">
                             <x-svg.youtube />
                         </a>
-                        <a href="#" class="mb-5 mr-4 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400">
+                        <a href="#" class="mb-5 mr-3 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400">
                             <x-svg.x />
                         </a>
                         <a href="#" class="mb-5 mr-2 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400">
