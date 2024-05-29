@@ -17,7 +17,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = auth()->user()->events()->paginate(3);
+        $events = auth()->user()->events()->orderBy('event_time')->paginate(3);
         return view('events.index', compact('events'));
     }
 
