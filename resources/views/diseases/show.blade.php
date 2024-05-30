@@ -17,6 +17,10 @@
                         <x-disease.info label-name="{{ __('Disease name') }}" disease-field="{{ $disease->name }}" />
                         <x-disease.info label-name="{{ __('Disease description') }}" disease-field="{{ $disease->description }}" />
 
+                        @foreach ($disease->treatments as $treatment)
+                            <x-disease.info labelName="{{ __('Treatment') }} {{ $loop->iteration }}" diseaseField="{{ $treatment->name }}" />
+                        @endforeach
+
 
                     </div>
                 </div>
