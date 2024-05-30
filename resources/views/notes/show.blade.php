@@ -16,6 +16,8 @@
 
                         <x-note.info label-name="{{ __('Note name') }}" note-field="{{ $note->name }}" />
                         <x-note.info label-name="{{ __('Note content') }}" note-field="{{ $note->body }}" />
+                        <x-note.info label-name="{{ __('Created') }}" note-field="{{ to_day_date_time_string($note->created_at, $locale = session()->get('locale'))}}" />
+                        <x-note.info label-name="{{ __('Updated') }}" note-field="{{ to_day_date_time_string($note->updated_at, $locale = session()->get('locale'))}}" />
 
 
                     </div>

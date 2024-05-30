@@ -22,8 +22,8 @@
 
             <ul role="list" class="divide-y divide-gray-100">
                 @forelse ($notes as $note)
-                <x-note.item noteRoute="{{ route('notes.show', $note) }}" noteName="{{ $note->name }}"
-                noteUpdatedAt="{{ $note->updated_at->diffForHumans() }}" />
+                <x-note.item noteRoute="{{ route('notes.show', $note) }}" noteName="{{ $note->name }}" noteCreatedAt="{{ to_day_date_time_string($note->created_at, $locale = session()->get('locale')) }}"
+                noteUpdatedAt="{{ to_day_date_time_string($note->updated_at, $locale = session()->get('locale')) }}" />
                 @empty
                 <x-hint>{{ __("You currently have no notes. Use the 'Create Note' button.") }}</x-hint>
                 @endforelse
