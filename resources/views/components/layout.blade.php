@@ -22,5 +22,8 @@
 
     {{ $slot }}
 
+    <!-- Loader overlay -->
+    <x-loader />
+
     </body>
 </html>
