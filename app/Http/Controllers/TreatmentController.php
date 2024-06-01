@@ -14,7 +14,7 @@ class TreatmentController extends Controller
      */
     public function index()
     {
-        $treatments = Treatment::whereHas('disease', function ($query) {
+        $treatments = Treatment::orderBy('created_at')->whereHas('disease', function ($query) {
             $query->where('user_id', auth()->id());
         })->paginate(3);
 
