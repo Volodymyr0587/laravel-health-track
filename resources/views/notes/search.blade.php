@@ -20,7 +20,7 @@
             <ul role="list" class="divide-y divide-gray-100">
                 @foreach ($notes as $note)
 
-                <x-note.item noteRoute="{{ route('notes.show', $note) }}" noteName="{{ $note->name }}"
+                <x-note.item noteRoute="{{ route('notes.show', $note) }}" noteName="{{ $note->name }}" noteCreatedAt="{{ $note->created_at->diffForHumans() }}"
                     noteUpdatedAt="{{ $note->updated_at->diffForHumans() }}" />
 
                 @endforeach
