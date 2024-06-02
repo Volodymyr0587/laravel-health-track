@@ -15,6 +15,6 @@
     </div>
     <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
         <p class="text-sm leading-6 text-gray-900 dark:text-white">{{ __("Price") }}: {{ $eventPrice }}</p>
-        <p class="mt-1 text-xs leading-5 text-gray-500">{{ __("Cerated") }} {{ $eventUpdatedAt }}</p>
+        <p class="mt-1 text-xs leading-5 text-gray-500">{{ __("Created") }} {{ $eventUpdatedAt }}</p>
     </div>
 </li>
