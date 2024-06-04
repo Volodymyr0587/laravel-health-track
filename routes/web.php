@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventsCalendarController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\NoteController;
@@ -80,6 +81,8 @@ Route::middleware('auth')->group(function () {
         Route::patch('/treatments/{treatment}', [TreatmentController::class, 'update'])->can('editTreatment', 'treatment')->name('update');
         Route::delete('/treatments/{treatment}', [TreatmentController::class, 'destroy'])->can('editTreatment', 'treatment')->name('destroy');
     });
+     //% Calendar
+    Route::get('/calendar', EventsCalendarController::class)->name('calendar');
     //% Search events
     Route::get('/search', SearchEventController::class)->name('search');
     //% Search diseases

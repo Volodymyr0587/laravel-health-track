@@ -19,6 +19,10 @@
         <x-svg.health-events />
     </x-sidebar.item>
 
+    <x-sidebar.item routeName="calendar" label="{{ __('Calendar') }}">
+        <x-svg.calendar />
+    </x-sidebar.item>
+
     <x-sidebar.item routeName="attachments.index" label="{{ __('Attachments') }}" badge="{{ count_attachments() }}">
         <x-svg.attachments />
     </x-sidebar.item>
