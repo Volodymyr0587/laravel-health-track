@@ -16,7 +16,7 @@
                 <x-forms.input label="Event date and time" name="event_time" type="datetime-local" />
                 <x-forms.textarea label="Event description" name="description"  />
                 <p class="text-gray-600 dark:text-gray-400">
-                    {{ __('Characters entered:') }} <span id="charCount">0</span> {{ __('Limit: 1000') }}
+                    {{ __('Characters entered:') }} <span id="charCount">0</span> {{ __('Limit: ') }} 1000
                 </p>
                 <x-forms.input label="Event price (if free, leave the field empty)" name="price" placeholder="750.00" />
                 <x-forms.input class="text-gray-500" label="File upload (Referral to a doctor, etc)" name="attachment" type="file" />
