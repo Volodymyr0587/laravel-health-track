@@ -15,7 +15,7 @@
     </x-sidebar.item>
     @endauth
 
-    <x-sidebar.item routeName="events.index" label="{{ __('Health events') }}" badge="{{ count_events() }}">
+    <x-sidebar.item routeName="events.index" label="{{ __('Medical events') }}" badge="{{ count_events() }}">
         <x-svg.health-events />
     </x-sidebar.item>
 

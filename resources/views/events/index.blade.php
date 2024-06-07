@@ -1,7 +1,7 @@
 <x-layout>
 
     <x-slot:heading>
-        {{ __("Health Events") }}
+        {{ __("Medical Events") }}
     </x-slot:heading>
 
     <div class="p-4 sm:ml-64">
