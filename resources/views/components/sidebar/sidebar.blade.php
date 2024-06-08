@@ -10,6 +10,10 @@
     </x-sidebar.item>
 
     @auth
+    <x-sidebar.item routeName="healthProfile.index" label="{{ __('Health profile') }}" >
+        <x-svg.personal-data />
+    </x-sidebar.item>
+
     <x-sidebar.item routeName="dashboard" label="{{ __('Dashboard') }}" >
         <x-svg.dashboard />
     </x-sidebar.item>

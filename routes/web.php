@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EventsCalendarController;
+use App\Http\Controllers\HealthProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\NoteController;
@@ -33,6 +34,12 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     //% Dashboard
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
+    //% Health Profile
+    Route::name('healthProfile.')->group(function () {
+        Route::get('/healthProfile', [HealthProfileController::class, 'index'])->name('index');
+        Route::get('/healthProfile/{healthProfile}/edit', [HealthProfileController::class, 'edit'])->can('edit', 'healthProfile')->name('edit');
+        Route::patch('/healthProfile/{healthProfile}', [HealthProfileController::class, 'update'])->can('edit', 'healthProfile')->name('update');
+    });
     //% Events
     Route::name('events.')->group(function () {
         Route::get('/events', [EventController::class, 'index'])->name('index');

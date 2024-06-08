@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -63,6 +64,11 @@ class User extends Authenticatable
         return $this->hasManyThrough(Treatment::class, Disease::class);
     }
 
+    public function healthProfile(): HasOne
+    {
+        return $this->hasOne(HealthProfile::class);
+    }
+
     public function countTreatments()
     {
         return $this->treatments()->count();
@@ -78,5 +84,15 @@ class User extends Authenticatable
         return Attribute::make(
             get: fn() => $this->first_name . ' ' . $this->last_name,
         );
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        self::created(function ($model) {
+            $healthProfile = new HealthProfile();
+            $model->healthProfile()->save($healthProfile);
+        });
     }
 }
