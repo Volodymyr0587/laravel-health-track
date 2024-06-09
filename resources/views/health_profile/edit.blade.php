@@ -14,7 +14,7 @@
 
                 <x-forms.input label="Date of birth" name="date_of_birth" type="date" value="{{ old('date_of_birth', $healthProfile->date_of_birth) }}" />
                 <x-forms.input label="Height (cm)" name="height" value="{{ old('height', $healthProfile->height) }}" placeholder="170" />
-                <x-forms.input label="Weight (kg)" name="weight" value="{{ old('weight', $healthProfile->weight) }}" placeholder="65" />
+                <x-forms.input label="Weight (kg)" name="weight" value="{{ old('weight', $healthProfile->weight) }}" placeholder="65.7" />
                 <x-forms.input label="Blood group and rhesus factor" name="blood_group" value="{{ old('blood_group', $healthProfile->blood_group) }}" placeholder="II +" />
                 <x-forms.input label="Pulse" name="pulse" value="{{ old('pulse', $healthProfile->pulse) }}" placeholder="70" />
                 <x-forms.input label="Blood pressure systolic" name="blood_pressure_systolic" value="{{ old('blood_pressure_systolic', $healthProfile->blood_pressure_systolic) }}" placeholder="120" />

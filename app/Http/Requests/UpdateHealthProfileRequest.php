@@ -24,7 +24,7 @@ class UpdateHealthProfileRequest extends FormRequest
         return [
             'date_of_birth' => 'nullable|date',
             'height' => 'nullable|integer|min:0|max:300',
-            'weight' => 'nullable|integer|min:0|max:635',
+            'weight' => 'nullable|decimal:0,3|min:0|max:635',
             'blood_group' => 'nullable|string|min:1|max:50',
             'pulse' => 'nullable|integer|min:0|max:600',
             'blood_pressure_systolic' => 'nullable|integer|min:0|max:400',

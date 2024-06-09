@@ -17,18 +17,18 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->date('date_of_birth')->nullable();
             $table->integer('height')->nullable();
-            $table->integer('weight')->nullable();
+            $table->float('weight')->nullable();
             $table->string('blood_group')->nullable();
             $table->integer('pulse')->nullable();
             $table->integer('blood_pressure_systolic')->nullable();
             $table->integer('blood_pressure_diastolic')->nullable();
-            $table->string('allergies')->nullable();
-            $table->string('chronic_diseases')->nullable();
-            $table->string('surgical_interventions')->nullable();
+            $table->text('allergies')->nullable();
+            $table->text('chronic_diseases')->nullable();
+            $table->text('surgical_interventions')->nullable();
             $table->integer('cigarettes_per_day')->nullable();
-            $table->float('alcohol_beer_per_week')->nullable();
-            $table->float('alcohol_wine_per_week')->nullable();
-            $table->float('alcohol_spirits_per_week')->nullable();
+            $table->integer('alcohol_beer_per_week')->nullable();
+            $table->integer('alcohol_wine_per_week')->nullable();
+            $table->integer('alcohol_spirits_per_week')->nullable();
             $table->timestamps();
         });
     }
