@@ -3,11 +3,28 @@
 </div>
 
 <script>
+    // Show the loader when navigating away
     window.addEventListener('beforeunload', function () {
         document.getElementById('loader').classList.remove('hidden');
     });
 
+    // Hide the loader once the page is fully loaded
     window.addEventListener('load', function () {
         document.getElementById('loader').classList.add('hidden');
+    });
+
+    // Function to handle file download clicks
+    function handleDownloadClick(event) {
+        document.getElementById('loader').classList.remove('hidden');
+
+        // Hide the loader after a short delay (assuming the download has started)
+        setTimeout(function () {
+            document.getElementById('loader').classList.add('hidden');
+        }, 500); // Adjust the delay as needed
+    }
+
+    // Attach event listeners to all download buttons/links
+    document.querySelectorAll('a[href*="download-attachment"]').forEach(function (element) {
+        element.addEventListener('click', handleDownloadClick);
     });
 </script>
