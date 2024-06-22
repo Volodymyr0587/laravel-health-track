@@ -18,7 +18,12 @@
                         <x-disease.info label-name="{{ __('Disease description') }}" disease-field="{{ $disease->description }}" />
 
                         @foreach ($disease->treatments as $treatment)
-                            <x-disease.info labelName="{{ __('Treatment') }} {{ $loop->iteration }}" diseaseField="{{ $treatment->name }}" />
+                            <x-disease.info labelName="{{ __('Treatment') }} {{ $loop->iteration }}" diseaseField="{{ $treatment->name }}">
+                                <a href="{{ route('treatments.show', $treatment->id) }}"
+                                    class="mt-1 truncate text-sm leading-5 text-blue-600 transition-all duration-150 ease-in-out hover:underline hover:font-bold">
+                                    {{ __("Show details...") }}
+                                </a>
+                            </x-disease.info>
                         @endforeach
 
 
