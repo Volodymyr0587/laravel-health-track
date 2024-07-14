@@ -84,10 +84,10 @@
                 </div>
                 <div class="grid grid-cols-2 gap-4 mt-8">
                     <img class="w-full rounded-lg"
-                        src="{{ asset('storage/images/health-3.jpg') }}"
+                        src="{{ asset('images/health-3.jpg') }}"
                         alt="office content 1">
                     <img class="w-full mt-4 rounded-lg lg:mt-10"
-                        src="{{ asset('storage/images/health-6.jpg') }}"
+                        src="{{ asset('images/health-6.jpg') }}"
                         alt="office content 2">
                 </div>
             </div>
@@ -240,10 +240,10 @@
             <div
                 class="items-center max-w-screen-xl gap-8 px-4 py-8 mx-auto xl:gap-16 md:grid md:grid-cols-1 lg:grid-cols-2 sm:py-16 lg:px-6">
                 <img class="w-full rounded-lg dark:hidden"
-                    src="{{ asset('storage/images/health-events-dark.png') }}"
+                    src="{{ asset('images/health-events-dark.png') }}"
                     alt="health image">
                 <img class="hidden w-full rounded-lg dark:block"
-                    src="{{ asset('storage/images/health-events-light.png') }}"
+                    src="{{ asset('images/health-events-light.png') }}"
                     alt="health image">
                 <div class="mt-4 md:mt-0">
                     <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">{{ __("A few simple steps to a healthy life") }}</h2>
