@@ -2,6 +2,8 @@
 
 HealthTrack is a comprehensive health management application designed to help users track doctor visits, treatments, and other health-related activities. The application allows users to create, view and manage events such as doctor visits, routine examinations and medical tests. Users can also track their illnesses and treatments. In addition, users can receive detailed information about their appointments by email.
 
+![Alt text](public/images/health-events-light.png)
+
 ## Features
 
 * **User Authentication:** Secure user registration and login.
