@@ -17,8 +17,8 @@
                         <x-treatment.info label-name="{{ __('Treatment name') }}" treatment-field="{{ $treatment->name }}" />
                         <x-treatment.info label-name="{{ __('Treatment for') }}" treatment-field="{{ $treatment->disease->name }}" />
                         <x-treatment.info label-name="{{ __('Treatment description') }}" treatment-field="{{ $treatment->description }}" />
-                        <x-treatment.info label-name="{{ __('Treatment start date') }}" treatment-field="{{ $treatment->started_at }}" />
-                        <x-treatment.info label-name="{{ __('Treatment end date') }}" treatment-field="{{ $treatment->ended_at }}" />
+                        <x-treatment.info label-name="{{ __('Started at') }}" treatment-field="{{ $treatment->started_at }}" />
+                        <x-treatment.info label-name="{{ __('Ended at') }}" treatment-field="{{ $treatment->ended_at }}" />
                         <x-treatment.info label-name="{{ __('Treatment price') }}" treatment-field="{{ $treatment->price }}" />
 
                     </div>

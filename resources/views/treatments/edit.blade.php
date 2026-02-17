@@ -23,8 +23,8 @@
 
                 <x-forms.input label="{{ __('Treatment name') }}" name="name" value="{{ $treatment->name }}" />
                 <x-forms.textarea label="{{ __('Treatment description') }}" name="description" value="{{ $treatment->description }}" />
-                <x-forms.input label="Started at" name="started_at" type="date" value="{{ $treatment->started_at }}" />
-                <x-forms.input label="Ended at" name="ended_at" type="date" value="{{ $treatment->ended_at }}" />
+                <x-forms.input label="{{ __('Started at') }}" name="started_at" type="date" value="{{ $treatment->started_at }}" />
+                <x-forms.input label="{{ __('Ended at') }}" name="ended_at" type="date" value="{{ $treatment->ended_at }}" />
                 <x-forms.input label="{{ __('Treatment price (if free, leave the field empty)') }}" name="price" value="{{ $treatment->price }}" />
 
                 <div class="flex space-x-2">
