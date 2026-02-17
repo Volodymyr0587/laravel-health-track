@@ -19,8 +19,16 @@ class TreatmentFactory extends Factory
     {
         return [
             'disease_id' => Disease::factory(),
-            'name' => fake()->word(),
+            'name' => fake()->randomElement([
+                'Medication',
+                'Physiotherapy',
+                'Surgery',
+                'Diet Plan',
+                'Exercise Program',
+            ]),
             'description' => fake()->sentence(),
+            'started_at' => fake()->dateTimeBetween('-2 years', 'now'),
+            'ended_at' => fake()->optional()->dateTimeBetween('now', '+1 year'),
         ];
     }
 }

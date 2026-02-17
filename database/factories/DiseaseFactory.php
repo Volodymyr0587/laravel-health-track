@@ -19,7 +19,14 @@ class DiseaseFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'name' => fake()->word(),
+            'name' => fake()->randomElement([
+                'Diabetes',
+                'Hypertension',
+                'Asthma',
+                'Arthritis',
+                'Migraine',
+            ]),
+            'diagnosed_at' => fake()->dateTimeBetween('-5 years', 'now'),
             'description' => fake()->sentence(),
         ];
     }

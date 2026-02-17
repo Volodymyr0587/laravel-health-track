@@ -2,9 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Disease;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Event;
+use App\Models\Treatment;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +17,34 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john@doe.com',
-            'password' => 'password123'
+        $user = User::firstOrCreate(
+            ['email' => 'john@doe.com'],
+            [
+                'first_name' => 'John',
+                'last_name' => 'Doe',
+                'password' => Hash::make('password123'),
+            ]
+        );
+
+        $user->load([
+            'diseases',
+            'events'
         ]);
+
+        // Prevent duplicate data on reseed
+        if ($user->diseases()->count() === 0) {
+            // Create diseases with treatments
+            Disease::factory()
+                ->count(3)
+                ->for($user)
+                ->has(Treatment::factory()->count(2))
+                ->create();
+
+            // Create events for this user
+            Event::factory()
+                ->count(5)
+                ->for($user)
+                ->create();
+        }
     }
 }

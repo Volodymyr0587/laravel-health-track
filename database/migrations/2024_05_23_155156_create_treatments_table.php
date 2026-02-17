@@ -15,6 +15,8 @@ return new class extends Migration {
             $table->foreignId('disease_id')->constrained()->cascadeOnDelete(); // зв'язок із захворюваннями
             $table->string('name'); // Назва лікування
             $table->text('description')->nullable(); // Опис лікування
+            $table->dateTime('started_at')->nullable();
+            $table->dateTime('ended_at')->nullable();
             $table->decimal('price', 8, 2)->default(0.00);
             $table->timestamps();
         });
