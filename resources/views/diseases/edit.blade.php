@@ -13,6 +13,7 @@
                 @method('PATCH')
 
                 <x-forms.input label="{{ __('Disease name') }}" name="name" value="{{ $disease->name }}" />
+                <x-forms.input label="Diagnosed at" name="diagnosed_at" type="date" value="{{ $disease->diagnosed_at }}" />
                 <x-forms.textarea label="{{ __('Disease description') }}" name="description" value="{{ $disease->description }}" />
 
                 <div class="flex space-x-2">

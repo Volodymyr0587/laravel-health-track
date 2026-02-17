@@ -25,6 +25,8 @@ class StoreTreatmentRequest extends FormRequest
             'disease_id' => 'required|exists:diseases,id',
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'started_at' => 'nullable|date|before_or_equal:today',
+            'ended_at' => 'nullable|date|after_or_equal:started_at|before_or_equal:today',
             'price' => 'nullable|numeric|min:0',
         ];
     }

@@ -13,6 +13,8 @@
 
                 <x-forms.input label="{{ __('Disease name') }}" name="name" placeholder="{{ __('Chronic inflammatory demyelinating polyneuropathy') }}" />
 
+                <x-forms.input label="Diagnosed at" name="diagnosed_at" type="date" />
+
                 <x-forms.textarea label="{{ __('Disease description') }}" name="description"  />
 
                 <div class="flex space-x-2">

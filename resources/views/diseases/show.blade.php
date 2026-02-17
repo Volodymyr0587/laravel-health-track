@@ -15,6 +15,7 @@
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
                         <x-disease.info label-name="{{ __('Disease name') }}" disease-field="{{ $disease->name }}" />
+                        <x-disease.info label-name="{{ __('Diagnosed at') }}" disease-field="{{ $disease->diagnosed_at }}" />
                         <x-disease.info label-name="{{ __('Disease description') }}" disease-field="{{ $disease->description }}" />
 
                         @foreach ($disease->treatments as $treatment)

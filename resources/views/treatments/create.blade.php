@@ -22,6 +22,10 @@
 
                 <x-forms.textarea label="{{ __('Treatment description') }}" name="description" />
 
+                <x-forms.input label="Started at" name="started_at" type="date" />
+
+                <x-forms.input label="Ended at" name="ended_at" type="date" />
+
                 <x-forms.input label="Treatment price (if free, leave the field empty)" name="price" placeholder="750.00" />
 
                 <div class="flex space-x-2">

@@ -23,6 +23,7 @@ class StoreDiseaseRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
+            'diagnosed_at' => 'nullable|date|before_or_equal:today',
             'description' => 'string|max:2000|nullable'
         ];
     }
