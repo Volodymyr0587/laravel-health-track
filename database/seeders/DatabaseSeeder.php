@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Disease;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Event;
+use App\Models\HealthProfile;
 use App\Models\Treatment;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -30,6 +31,11 @@ class DatabaseSeeder extends Seeder
             'diseases',
             'events'
         ]);
+
+        // Fill profile with fake data
+        $user->healthProfile->update(
+            HealthProfile::factory()->make()->toArray()
+        );
 
         // Prevent duplicate data on reseed
         if ($user->diseases()->count() === 0) {

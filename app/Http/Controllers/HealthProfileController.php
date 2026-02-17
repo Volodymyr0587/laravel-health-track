@@ -32,6 +32,18 @@ class HealthProfileController extends Controller
     {
         $validatedData = $request->validated();
 
+        $validatedData['allergies'] = $validatedData['allergies']
+            ? array_map('trim', explode(',', $validatedData['allergies']))
+            : null;
+
+        $validatedData['chronic_diseases'] = $validatedData['chronic_diseases']
+            ? array_map('trim', explode(',', $validatedData['chronic_diseases']))
+            : null;
+
+        $validatedData['surgical_interventions'] = $validatedData['surgical_interventions']
+            ? array_map('trim', explode(',', $validatedData['surgical_interventions']))
+            : null;
+
         $healthProfile->update($validatedData);
 
         flash()->success('Your health profile has been updated.');

@@ -29,11 +29,17 @@
 
                 <x-health-profile.info labelName="{{ __('Blood pressure diastolic') }}" profileField="{{ $healthProfile->blood_pressure_diastolic ?? 'Not specified' }}" />
 
-                <x-health-profile.info labelName="{{ __('Allergies') }}" profileField="{{ $healthProfile->allergies ?? 'Not specified' }}" />
+                @php
+                    $allergies = $healthProfile->allergies ? implode(", ", $healthProfile->allergies) : 'Not specified';
+                    $chronic_diseases = $healthProfile->chronic_diseases ? implode(", ", $healthProfile->chronic_diseases) : 'Not specified';
+                    $surgical_interventions = $healthProfile->surgical_interventions ? implode(", ", $healthProfile->surgical_interventions) : 'Not specified';
+                @endphp
 
-                <x-health-profile.info labelName="{{ __('Chronic diseases') }}" profileField="{{ $healthProfile->chronic_diseases ?? 'Not specified' }}" />
+                <x-health-profile.info labelName="{{ __('Allergies') }}" :profileField="$allergies" />
 
-                <x-health-profile.info labelName="{{ __('Surgical interventions') }}" profileField="{{ $healthProfile->surgical_interventions ?? 'Not specified' }}" />
+                <x-health-profile.info labelName="{{ __('Chronic diseases') }}" :profileField="$chronic_diseases" />
+
+                <x-health-profile.info labelName="{{ __('Surgical interventions') }}" :profileField="$surgical_interventions" />
 
                 <x-health-profile.info labelName="{{ __('Cigarettes per day') }}" profileField="{{ $healthProfile->cigarettes_per_day ?? 'Not specified' }}" />
 
